@@ -1,0 +1,27 @@
+{
+  "name": "shutter-node-sdk",
+  "version": "1.2.0",
+  "description": "Shutter API node SDK",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha ./test/sdk.spec.js --exit --timeout 15000 --bail"
+  },
+  "keywords": [
+    "shutter",
+    "sdk",
+    "meet",
+    "meeting",
+    "webrtc",
+    "video"
+  ],
+  "author": "Miguel Rodriguez Crespo <mirodriguez11@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-fetch": "^0.7.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
