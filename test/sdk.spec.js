@@ -30,7 +30,6 @@ describe('SDK', async() => {
 				audioSource: "mic1",
 				videoSource: "cam1",
 				peerID: "sadg4e3geg",
-				attendeeData: "String",
 				displayName: "[UnitTest]",
 				error: "String",
 				reason: "String"
