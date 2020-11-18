@@ -1,6 +1,6 @@
 {
   "name": "shutter-sdk-js",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Shutter API javascript SDK",
   "homepage": "https://github.com/Councilbox/shutter-sdk-js",
   "main": "index.js",
@@ -19,7 +19,10 @@
   "author": "Miguel Rodriguez Crespo <mirodriguez11@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "apollo-fetch": "^0.7.0"
+    "@apollo/client": "^3.2.7",
+    "cross-fetch": "^3.0.6",
+    "graphql": "^15.4.0",
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
