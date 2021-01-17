@@ -1,9 +1,10 @@
-## SHUTTER SDK JS
-```
+# SHUTTER SDK JS
+
+```js
 import Shutter from 'shutter-sdk-js';
 const options = {
-	email: "example@mail.com",
-	password: "your_pass"
+  email: "example@mail.com",
+  password: "your_pass"
 }
 const ShutterClient = new Shutter.client(options);
 const shutter = await ShutterClient.initialize();

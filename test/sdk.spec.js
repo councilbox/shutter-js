@@ -35,7 +35,6 @@ describe('SDK', async() => {
 				reason: "String"
 			};
 
-
 			return shutter.events.create(event)
 				.then((response) => {
 					expect(response.data).to.be.a("object");
