@@ -1,8 +1,6 @@
-const chai = require('chai');
 const { describe, it } = require('mocha');
 const Shutter = require('../index');
 const options = require('./config');
-const { expect } = chai;
 
 describe('SDK', async() => {
 	const ShutterClient = Shutter.client(options);
@@ -37,12 +35,12 @@ describe('SDK', async() => {
 
 			return shutter.events.create(event)
 				.then((response) => {
-					expect(response.data).to.be.a("object");
-					expect(response.data).to.have.property('addEvent');
-					expect(response.data.addEvent).to.not.be.null;
-					expect(response.data.addEvent).to.have.property('id');
+					expect(response.data).toBeInstanceOf(Object);
+					expect(response.data).toHaveProperty('addEvent');
+					expect(response.data.addEvent).not.toBeNull();
+					expect(response.data.addEvent).toHaveProperty('id');
 					createdEvent = response.data.addEvent;
-				})
+				});
 		});
 	})
 })

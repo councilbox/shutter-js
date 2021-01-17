@@ -25,7 +25,6 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
     "mocha": "^8.2.1"
   }
 }
