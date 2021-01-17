@@ -1,6 +1,7 @@
-const { describe, it } = require('mocha');
 const Shutter = require('../index');
+
 const options = require('./config');
+
 
 describe('SDK', async() => {
 	const ShutterClient = Shutter.client(options);
