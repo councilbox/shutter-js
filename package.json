@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "jest-cli": "^26.6.3",
+    "nock": "^13.0.5",
     "prettier": "^2.2.1"
   }
 }
