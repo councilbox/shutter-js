@@ -1,6 +1,6 @@
 [
     {
-        "scope": "https://shutter-api.dev.councilbox.com:443",
+        "scope": "http://example.test:80",
         "method": "POST",
         "path": "/graphql",
         "body": {

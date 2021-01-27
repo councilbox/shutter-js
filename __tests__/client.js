@@ -59,7 +59,7 @@ describe("Events", function () {
     shutter = client({
       email: "example@mail.com",
       password: "your_pass",
-      uri: "http://example.test",
+      uri: "http://example.test/graphql",
     });
   });
 
@@ -128,7 +128,7 @@ describe("Me", function () {
     shutter = client({
       email: "example@mail.com",
       password: "your_pass",
-      uri: "http://example.test",
+      uri: "http://example.test/graphql",
     });
   });
 
