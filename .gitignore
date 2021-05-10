@@ -1,9 +1,5 @@
 
 .idea/
-
-node_modules/
-
-test.local.js
-
-config.js
 coverage/
+node_modules/
+config.js

@@ -718,7 +718,7 @@ describe("full config", function () {
               "type": "ACCOUNT",
             }
           `);
-      });
+        });
     });
   });
-})
+});
