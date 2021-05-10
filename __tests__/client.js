@@ -4,12 +4,12 @@ const { client } = require("..");
 
 back.fixtures = __dirname + "/nockFixtures";
 
-back.setMode('lockdown')
+back.setMode("lockdown");
 
 describe("missing arguments", function () {
   test("no arguments", function () {
     expect(client).toThrowErrorMatchingInlineSnapshot(
-      `"Parameter \\"email\\" is required"`
+      `"Cannot read property 'email' of undefined"`
     );
   });
 
@@ -86,8 +86,7 @@ describe("Events", function () {
 
     return back("Events_addEvent.json")
       .then(function ({ nockDone }) {
-        return shutter.events.create(event)
-        .finally(nockDone);
+        return shutter.events.create(event).finally(nockDone);
       })
       .then(function (response) {
         expect(response).toMatchInlineSnapshot(`
@@ -117,7 +116,7 @@ describe("Events", function () {
             "videoSource": "cam1",
           }
         `);
-      })
+      });
   });
 });
 
@@ -135,8 +134,7 @@ describe("Me", function () {
   test("get", function () {
     return back("Me_get.json")
       .then(function ({ nockDone }) {
-        return shutter.me.get()
-        .finally(nockDone);
+        return shutter.me.get().finally(nockDone);
       })
       .then(function (response) {
         expect(response).toMatchInlineSnapshot(`
@@ -729,6 +727,6 @@ describe("Me", function () {
             "type": "ACCOUNT",
           }
       `);
-    });
+      });
   });
 });
