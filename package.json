@@ -1,12 +1,15 @@
 {
   "name": "shutter-sdk-js",
   "version": "1.3.2",
-  "description": "Shutter API javascript SDK",
-  "homepage": "https://github.com/Councilbox/shutter-sdk-js",
+  "description": "Shutter API - javascript SDK",
+  "homepage": "https://github.com/Councilbox/shutter-sdk-js#readme",
+  "bugs": {
+    "url": "https://github.com/Councilbox/shutter-sdk-js/issues"
+  },
   "scripts": {
-	"local": "node test.local.js",
+    "local": "node test.local.js",
     "lint": "eslint .",
-	"fix": "eslint . --fix",
+    "fix": "eslint . --fix",
     "test": "jest --coverage --notify"
   },
   "keywords": [
