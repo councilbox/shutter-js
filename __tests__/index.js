@@ -1,7 +1,7 @@
-const Shutter = require("..");
+const Shutter = require('..');
 
-test("smoke", function () {
-  expect(Shutter).toMatchInlineSnapshot(`
+test('smoke', () => {
+	expect(Shutter).toMatchInlineSnapshot(`
     Object {
       "VERSION": "1.3.2",
       "client": [Function],

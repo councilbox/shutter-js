@@ -1,0 +1,17 @@
+{
+  "env": {
+    "jest/globals": true,
+    "node": true
+  },
+  "extends": [
+    "@councilbox/eslint-config-base",
+    "plugin:jest/style"
+  ],
+  "ignorePatterns": ["doc"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": ["jest"]
+}

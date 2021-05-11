@@ -1,96 +1,94 @@
-const { back } = require("nock");
+const { back } = require('nock');
 
-const { client } = require("..");
+const { client } = require('..');
 
-back.fixtures = __dirname + "/nockFixtures";
+back.fixtures = `${__dirname}/nockFixtures`;
 
-back.setMode("lockdown");
+back.setMode('lockdown');
 
-describe("missing arguments", function () {
-  test("no arguments", function () {
-    expect(client).toThrowErrorMatchingInlineSnapshot(
-      `"Cannot read property 'email' of undefined"`
-    );
-  });
+describe('missing arguments', () => {
+	test('no arguments', () => {
+		expect(client).toThrowErrorMatchingInlineSnapshot(
+			'"Cannot destructure property \'email\' of \'_ref\' as it is undefined."'
+		);
+	});
 
-  test("no email", function () {
-    function func() {
-      client({});
-    }
+	test('no email', () => {
+		function func() {
+			client({});
+		}
 
-    expect(func).toThrowErrorMatchingInlineSnapshot(
-      `"Parameter \\"email\\" is required"`
-    );
-  });
+		expect(func).toThrowErrorMatchingInlineSnapshot(
+			'"Parameter \\"email\\" is required"'
+		);
+	});
 
-  test("email, no password", function () {
-    function func() {
-      client({
-        email: "example@mail.com",
-      });
-    }
+	test('email, no password', () => {
+		function func() {
+			client({
+				email: 'example@mail.com',
+			});
+		}
 
-    expect(func).toThrowErrorMatchingInlineSnapshot(
-      `"Parameter \\"password\\" is required"`
-    );
-  });
+		expect(func).toThrowErrorMatchingInlineSnapshot(
+			'"Parameter \\"password\\" is required"'
+		);
+	});
 
-  test("email and password, no uri", function () {
-    function func() {
-      client({
-        email: "example@mail.com",
-        password: "your_pass",
-      });
-    }
+	test('email and password, no uri', () => {
+		function func() {
+			client({
+				email: 'example@mail.com',
+				password: 'your_pass',
+			});
+		}
 
-    expect(func).toThrowErrorMatchingInlineSnapshot(
-      `"Parameter \\"uri\\" is required"`
-    );
-  });
+		expect(func).toThrowErrorMatchingInlineSnapshot(
+			'"Parameter \\"uri\\" is required"'
+		);
+	});
 });
 
-describe("full config", function () {
-  let shutter;
+describe('full config', () => {
+	let shutter;
 
-  beforeEach(function () {
-    shutter = client({
-      email: "example@mail.com",
-      password: "your_pass",
-      uri: "http://example.test/graphql",
-    });
-  });
+	beforeEach(() => {
+		shutter = client({
+			email: 'example@mail.com',
+			password: 'your_pass',
+			uri: 'http://example.test/graphql',
+		});
+	});
 
-  describe("Events", function () {
-    const roomNumber = "5fb288c7d890f45a581823e4";
-    const attendeeID = "5fb288d374eae06375dd75cc";
+	describe('Events', () => {
+		const roomNumber = '5fb288c7d890f45a581823e4';
+		const attendeeID = '5fb288d374eae06375dd75cc';
 
-    test("addEvent", function () {
-      const event = {
-        type: "[UnitTest] CONNECTION",
-        roomNumber,
-        attendeeID,
-        ip: "127.0.0.1",
-        platform: {
-          osName: "iOS",
-          osVersion: "11",
-          browserName: "Safari",
-          browserVersion: "57",
-          userAgent: "sdsdgasdg",
-        },
-        audioSource: "mic1",
-        videoSource: "cam1",
-        peerID: "sadg4e3geg",
-        displayName: "[UnitTest]",
-        error: "String",
-        reason: "String",
-      };
+		test('addEvent', () => {
+			const event = {
+				type: '[UnitTest] CONNECTION',
+				roomNumber,
+				attendeeID,
+				ip: '127.0.0.1',
+				platform: {
+					osName: 'iOS',
+					osVersion: '11',
+					browserName: 'Safari',
+					browserVersion: '57',
+					userAgent: 'sdsdgasdg',
+				},
+				audioSource: 'mic1',
+				videoSource: 'cam1',
+				peerID: 'sadg4e3geg',
+				displayName: '[UnitTest]',
+				error: 'String',
+				reason: 'String',
+			};
 
-      return back("Events_addEvent.json")
-        .then(function ({ nockDone }) {
-          return shutter.events.create(event).finally(nockDone);
-        })
-        .then(function (response) {
-          expect(response).toMatchInlineSnapshot(`
+			return back('Events_addEvent.json')
+				.then(({ nockDone }) => shutter.events.create(event).finally(nockDone))
+				.then(response => {
+					expect(response).toMatchInlineSnapshot(`
             Object {
               "attendeeID": "5fb288d374eae06375dd75cc",
               "audioDevices": Array [],
@@ -117,18 +115,15 @@ describe("full config", function () {
               "videoSource": "cam1",
             }
           `);
-        });
-    });
-  });
+				});
+		});
+	});
 
-  describe("Me", function () {
-    test("get", function () {
-      return back("Me_get.json")
-        .then(function ({ nockDone }) {
-          return shutter.me.get().finally(nockDone);
-        })
-        .then(function (response) {
-          expect(response).toMatchInlineSnapshot(`
+	describe('Me', () => {
+		test('get', () => back('Me_get.json')
+			.then(({ nockDone }) => shutter.users.me().finally(nockDone))
+			.then(response => {
+				expect(response).toMatchInlineSnapshot(`
             Object {
               "created": "1596456142392",
               "email": "test_account@shutter.com",
@@ -718,7 +713,6 @@ describe("full config", function () {
               "type": "ACCOUNT",
             }
           `);
-        });
-    });
-  });
+			}));
+	});
 });
