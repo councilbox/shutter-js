@@ -47,10 +47,31 @@ The following service methods are available to instantiated clients. The example
     - [me](#me)
     - [create](#create)
     - [delete](#delete)
-  - [organizations](#domains)
+  - [organizations](#organizations)
     - [list](#list)
     - [create](#create-1)
     - [update](#update)
+  - [rooms](#rooms)
+    - [list](#list-1)
+	- [get](#get)
+    - [create](#create-2)
+    - [update](#update-1)
+	- [delete](#delete-1)
+	- [startRecording](#start-recording)
+	- [stopRecording](#stop-recording)
+	- [startStreaming](#start-streaming)
+	- [stopStreaming](#start-streaming)
+	- [attendeesUrls](#attendees-urls)
+  - [attendees](#attendees)
+    - [list](#list-2)
+	- [get](#get-1)
+    - [create](#create-3)
+    - [update](#update-2)
+	- [delete](#delete-2)
+	- [raiseHand](#raise-hand)
+	- [lowerHand](#lower-hand)
+	- [grantWord](#grant-word)
+	- [denyWord](#deny-word)
 
 Method naming conventions:
 - `get` or `get{{Item}}` - expected response for client is a single object
@@ -67,7 +88,7 @@ Method naming conventions:
 
 `shutter.users.create({user})`
 
-HTML/TEXT Example:
+Example:
 
 ```js
 try {
