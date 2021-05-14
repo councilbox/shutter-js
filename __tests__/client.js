@@ -1,65 +1,51 @@
 const { back } = require('nock');
 
-const { client } = require('..');
+const Shutter = require('..');
+
+const shutter = new Shutter({
+	email: 'example@mail.com',
+	password: 'your_pass',
+	uri: 'http://example.test/graphql',
+});
 
 back.fixtures = `${__dirname}/nockFixtures`;
 
 back.setMode('lockdown');
 
-describe('missing arguments', () => {
+/* describe('missing arguments', () => {
 	test('no arguments', () => {
-		expect(client).toThrowErrorMatchingInlineSnapshot(
-			'"Cannot destructure property \'email\' of \'_ref\' as it is undefined."'
+		expect(new Shutter()).toThrowErrorMatchingInlineSnapshot(
+			'"Parameter \\"email\\" is required"'
 		);
 	});
 
 	test('no email', () => {
-		function func() {
-			client({});
-		}
-
-		expect(func).toThrowErrorMatchingInlineSnapshot(
+		expect(new Shutter({
+			password: 'your_pass'
+		})).toThrowErrorMatchingInlineSnapshot(
 			'"Parameter \\"email\\" is required"'
 		);
 	});
 
 	test('email, no password', () => {
-		function func() {
-			client({
-				email: 'example@mail.com',
-			});
-		}
-
-		expect(func).toThrowErrorMatchingInlineSnapshot(
+		expect(new Shutter({
+			email: 'example@mail.com',
+		})).toThrowErrorMatchingInlineSnapshot(
 			'"Parameter \\"password\\" is required"'
 		);
 	});
 
 	test('email and password, no uri', () => {
-		function func() {
-			client({
-				email: 'example@mail.com',
-				password: 'your_pass',
-			});
-		}
-
-		expect(func).toThrowErrorMatchingInlineSnapshot(
+		expect(new Shutter({
+			email: 'example@mail.com',
+			password: 'your_pass',
+		})).toThrowErrorMatchingInlineSnapshot(
 			'"Parameter \\"uri\\" is required"'
 		);
 	});
-});
+}); */
 
 describe('full config', () => {
-	let shutter;
-
-	beforeEach(() => {
-		shutter = client({
-			email: 'example@mail.com',
-			password: 'your_pass',
-			uri: 'http://example.test/graphql',
-		});
-	});
-
 	describe('Events', () => {
 		const roomNumber = '5fb288c7d890f45a581823e4';
 		const attendeeID = '5fb288d374eae06375dd75cc';

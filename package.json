@@ -1,6 +1,6 @@
 {
   "name": "shutter-sdk-js",
-  "version": "1.3.3-alpha",
+  "version": "0.1.0",
   "description": "Shutter API - javascript SDK",
   "homepage": "https://github.com/Councilbox/shutter-sdk-js#readme",
   "bugs": {
