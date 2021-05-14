@@ -1,10 +1,10 @@
 {
-  "name": "shutter-sdk-js",
+  "name": "shutter-js",
   "version": "0.1.0",
   "description": "Shutter API - javascript SDK",
-  "homepage": "https://github.com/Councilbox/shutter-sdk-js#readme",
+  "homepage": "https://github.com/Councilbox/shutter-js#readme",
   "bugs": {
-    "url": "https://github.com/Councilbox/shutter-sdk-js/issues"
+    "url": "https://github.com/Councilbox/shutter-js/issues"
   },
   "scripts": {
     "local": "node test.local.js",
