@@ -3,7 +3,5 @@ const { version } = require('./package.json');
 
 module.exports = {
 	VERSION: version,
-	client({ email, password, uri }) {
-		return new Client({ email, password, uri });
-	}
+	client: ({ email, password, uri }) => new Client({ email, password, uri })
 };
