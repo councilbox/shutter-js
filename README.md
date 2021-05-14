@@ -19,19 +19,19 @@ NOTE: If used in the browser do not publish your private api key in frontend cod
 - Requires node.js >= 14.x
 
 ```sh
-npm i shutter-js
+npm i @councilbox/shutter-js
 ```
 ----
 
 ## Setup Client
 
-Next, require the module and instantiate a shutter client by calling `new Shutter.client` and setup the client with basic auth credentials `(email: 'example@mail.com', password: 'your_pass_here')`. Also need an api url provided by shutter team.
+Next, require the module and instantiate a shutter client by calling `new Shutter` and setup the client with basic auth credentials `(email: 'example@mail.com', password: 'your_pass_here')`. Also need an api url provided by shutter team.
 
 ```js
-import Shutter from 'shutter-js';
+import Shutter from '@councilbox/shutter-js';
 
 
-const shutter = new Shutter.client({
+const shutter = new Shutter({
   email: "example@mail.com",
   password: "your_pass_here",
   uri: "example.shutter.com"
