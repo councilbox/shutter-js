@@ -1,9 +1,3 @@
-const client = require( './lib/client');
-const { version } = require('./package.json');
+const Client = require('./lib/client');
 
-module.exports = {
-	VERSION: version,
-	client: function(options) {
-		return new client(options);
-	}
-};
+module.exports = Client;

@@ -1,9 +1,15 @@
 {
   "name": "shutter-sdk-js",
-  "version": "1.3.2",
-  "description": "Shutter API javascript SDK",
-  "homepage": "https://github.com/Councilbox/shutter-sdk-js",
+  "version": "0.1.0",
+  "description": "Shutter API - javascript SDK",
+  "homepage": "https://github.com/Councilbox/shutter-sdk-js#readme",
+  "bugs": {
+    "url": "https://github.com/Councilbox/shutter-sdk-js/issues"
+  },
   "scripts": {
+    "local": "node test.local.js",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
     "test": "jest --coverage --notify"
   },
   "keywords": [
@@ -26,6 +32,13 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-env": "^7.14.1",
+    "@councilbox/eslint-config-base": "0.0.1",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
     "husky": "^4.3.8",
     "jest-cli": "^26.6.3",
     "nock": "^13.0.11",
@@ -33,7 +46,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "npm run lint",
       "pre-push": "npm test"
     }
   }
