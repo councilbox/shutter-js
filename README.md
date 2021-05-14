@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/Councilbox/shutter-js)]()
 [![Version](https://img.shields.io/github/package-json/v/Councilbox/shutter-js)]()
-[![NPM](https://img.shields.io/npm/v/shutter-js)]()
+[![NPM](https://img.shields.io/npm/v/@councilbox/shutter-js)]()
 
 A javascript sdk for Shutter built with webpack, babel & es6. This can be used in node or in the browser*.
 
