@@ -26,18 +26,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "^3.3.16",
+    "@apollo/client": "^3.3.18",
     "cross-fetch": "^3.1.4",
     "graphql": "^15.5.0",
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/eslint-parser": "^7.13.14",
-    "@babel/preset-env": "^7.14.1",
+    "@babel/core": "^7.14.2",
+    "@babel/eslint-parser": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
     "@councilbox/eslint-config-base": "0.0.1",
     "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.0",
     "eslint-plugin-jest": "^24.3.6",
     "husky": "^4.3.8",
     "jest-cli": "^26.6.3",
