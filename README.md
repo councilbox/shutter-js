@@ -4,15 +4,15 @@
 [![Version](https://img.shields.io/github/package-json/v/Councilbox/shutter-js)]()
 [![NPM](https://img.shields.io/npm/v/@councilbox/shutter-js)]()
 
-A javascript sdk for Shutter built with webpack, babel & es6. This can be used in node or in the browser*.
+A javascript sdk for Shutter built with webpack, babel & es6. This can be used
+in node or in the browser*.
 
-NOTE: If used in the browser do not publish your private api key in frontend code.
+NOTE: If used in the browser do not publish your private api key in frontend
+code.
 
-  - [Install](#install)
-  - [Setup Client](#setup-client)
-  - [Methods](#methods)
-
-----
+- [Install](#install)
+- [Setup Client](#setup-client)
+- [Methods](#methods)
 
 ## Install
 
@@ -21,15 +21,16 @@ NOTE: If used in the browser do not publish your private api key in frontend cod
 ```sh
 npm i @councilbox/shutter-js
 ```
-----
 
 ## Setup Client
 
-Next, require the module and instantiate a shutter client by calling `new Shutter` and setup the client with basic auth credentials `(email: 'example@mail.com', password: 'your_pass_here')`. Also need an api url provided by shutter team.
+Next, require the module and instantiate a shutter client by calling
+`new Shutter` and setup the client with basic auth credentials
+`(email: 'example@mail.com', password: 'your_pass_here')`. Also need an api url
+provided by shutter team.
 
 ```js
 import Shutter from '@councilbox/shutter-js';
-
 
 const shutter = new Shutter({
   email: "example@mail.com",
@@ -38,49 +39,49 @@ const shutter = new Shutter({
 });
 ```
 
-----
-
 ## Methods
 
 The following service methods are available to instantiated clients. The examples assume you have already created a shutter client as `shutter` with valid credentials.
-  - [users](#users)
-    - [me](#me)
-    - [create](#create)
-    - [delete](#delete)
-  - [organizations](#organizations)
-    - [list](#list)
-    - [create](#create-1)
-    - [update](#update)
-  - [rooms](#rooms)
-    - [list](#list-1)
-	- [get](#get)
-    - [create](#create-2)
-    - [update](#update-1)
-	- [delete](#delete-1)
-	- [startRecording](#start-recording)
-	- [stopRecording](#stop-recording)
-	- [startStreaming](#start-streaming)
-	- [stopStreaming](#start-streaming)
-	- [attendeesUrls](#attendees-urls)
-  - [attendees](#attendees)
-    - [list](#list-2)
-	- [get](#get-1)
-    - [create](#create-3)
-    - [update](#update-2)
-	- [delete](#delete-2)
-	- [raiseHand](#raise-hand)
-	- [lowerHand](#lower-hand)
-	- [grantWord](#grant-word)
-	- [denyWord](#deny-word)
+
+- [users](#users)
+  - [me](#me)
+  - [create](#create)
+  - [delete](#delete)
+- [organizations](#organizations)
+  - [list](#list)
+  - [create](#create-1)
+  - [update](#update)
+- [rooms](#rooms)
+  - [list](#list-1)
+  - [get](#get)
+  - [create](#create-2)
+  - [update](#update-1)
+  - [delete](#delete-1)
+  - [startRecording](#start-recording)
+  - [stopRecording](#stop-recording)
+  - [startStreaming](#start-streaming)
+  - [stopStreaming](#start-streaming)
+  - [attendeesUrls](#attendees-urls)
+- [attendees](#attendees)
+  - [list](#list-2)
+  - [get](#get-1)
+  - [create](#create-3)
+  - [update](#update-2)
+  - [delete](#delete-2)
+  - [raiseHand](#raise-hand)
+  - [lowerHand](#lower-hand)
+  - [grantWord](#grant-word)
+  - [denyWord](#deny-word)
 
 Method naming conventions:
+
 - `get` or `get{{Item}}` - expected response for client is a single object
 - `list` or `list{{Items}}` - expected response for client is a list of objects
 - `create` or `create{{Item}}` - expected response for client is a single object
-- `update` or `update{{Item}}` - expected response is an object with a status message
-- `delete` or `delete{{Item}}` - expected response is an object with a status message
-
-----
+- `update` or `update{{Item}}` - expected response is an object with a status
+  message
+- `delete` or `delete{{Item}}` - expected response is an object with a status
+  message
 
 ### users
 
@@ -104,7 +105,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '609ab5190ae391f4e90d10f1',
   name: 'test',
@@ -115,7 +116,18 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 name              | Name of the user.
 email             | Email address of the user. Example: "Jhon <jhon@host.com>".
 
+```sh
+const rooms = shutter.rooms.getAll();
+```
+
+```sh
+# LOGIN
+curl --location --request POST 'http://example.test/graphql' \
+  --header 'Content-Type: application/json' \
+  --data-raw \
+    '{"query":"mutation login($credentials: Credentials!){\n  login(credentials: $credentials)\n}","variables":{"credentials":{"email":"test_account@shutter.com","password":"abc1234"}}}'
+```
