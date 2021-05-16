@@ -195,7 +195,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 id                | User ID.
 
 ### organizations
@@ -217,7 +217,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 [
   {
     id: '109bec1d8aaef2395f48105c',
@@ -247,11 +247,11 @@ Example:
 try {
   const organization = await shutter.organizations.create({
    organization: {
-   name: `Test Org`,
-   logo: {
-    filetype: 'png',
-    base64: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII='
-   }
+    name: `Test Org`,
+    logo: {
+      filetype: 'png',
+      base64: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII='
+    }
    }
   });
   console.log(organization) // logs response data
@@ -262,7 +262,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e4d71ec5805340e6ccaf3',
   name: 'Test Org',
@@ -273,7 +273,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 name              | Name of the organization.
 logo              | Need two fields: filetype -> file type (png, jpeg, gif...); base64 -> file base64 encoded string.
 
@@ -286,14 +286,14 @@ Example:
 ```js
 try {
   const updatedOrganization = await shutter.organizations.update({
-   organization: {
-     id: '109e4d71ec5805340e6ccaf3',
-   name: `Test Org Updated`,
-   logo: {
-    filetype: 'png',
-    base64: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII='
-   }
-   }
+    organization: {
+      id: '109e4d71ec5805340e6ccaf3',
+      name: `Test Org Updated`,
+      logo: {
+        filetype: 'png',
+        base64: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII='
+      }
+    }
   });
   console.log(updatedOrganization) // logs response data
 } catch (err) {
@@ -303,7 +303,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e4d71ec5805340e6ccaf3',
   name: 'Test Org Updated',
@@ -314,7 +314,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 id                | Organization ID. (required).
 name              | Name of the organization.
 logo              | Need two fields: filetype -> file type (png, jpeg, gif...); base64 -> file base64 encoded string.
@@ -336,7 +336,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e4d71ec5805340e6ccaf3',
   name: 'Test Org',
@@ -347,7 +347,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 id                | Organization ID.
 
 ### rooms
@@ -369,7 +369,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 [
   {
     roomNumber: '109e5704fd41a639344b9432',
@@ -439,7 +439,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   roomNumber: '109e5704fd41a639344b9432',
     userID: '109bec0f8aaef2395f481059',
@@ -492,7 +492,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### create
@@ -553,7 +553,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   userID: '109bec0f8aaef2395f481059',
   organizationID: '109e5700fd41a639344b942c',
@@ -607,7 +607,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 room              | Room object
 organizationID    | Organization ID that room belongs to.
 
@@ -669,7 +669,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
  roomNumber: '109e5704fd41a639344b9432',
  type: 'MEET',
@@ -715,7 +715,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 room              | Room object
 organizationID    | Organization ID that room belongs to.
 
@@ -736,7 +736,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   userID: '109bec0f8aaef2395f481059',
   organizationID: '109e5700fd41a639344b942c',
@@ -756,7 +756,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### startRecording
@@ -776,7 +776,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   userID: '109bec0f8aaef2395f481059',
   organizationID: '109e5700fd41a639344b942c',
@@ -795,7 +795,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### stopRecording
@@ -815,7 +815,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   userID: '109bec0f8aaef2395f481059',
   organizationID: '109e5700fd41a639344b942c',
@@ -834,7 +834,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### startStreaming
@@ -854,7 +854,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   userID: '109bec0f8aaef2395f481059',
   organizationID: '109e5700fd41a639344b942c',
@@ -873,7 +873,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### stopStreaming
@@ -893,7 +893,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   userID: '109bec0f8aaef2395f481059',
   organizationID: '109e5700fd41a639344b942c',
@@ -912,7 +912,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### attendeesUrls
@@ -932,7 +932,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 [
   {
     attendee: {
@@ -964,7 +964,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 ### attendees
@@ -986,7 +986,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 [
    {
   id: '109e5705fd41a639344b943a',
@@ -1015,7 +1015,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
 #### get
@@ -1035,7 +1035,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   role: 'SPEAKER',
@@ -1061,7 +1061,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
 
@@ -1103,7 +1103,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1131,7 +1131,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room ID that attendee belongs to.
 attendee          | Attendee object
 
@@ -1174,7 +1174,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1202,7 +1202,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room ID that attendee belongs to.
 attendee          | Attendee object
 
@@ -1223,7 +1223,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1251,7 +1251,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
 
@@ -1272,7 +1272,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1301,7 +1301,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
 
@@ -1322,7 +1322,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1351,7 +1351,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
 
@@ -1372,7 +1372,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1401,7 +1401,7 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
 
@@ -1422,7 +1422,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 {
   id: '109e5705fd41a639344b943a',
   externalID: null,
@@ -1451,6 +1451,6 @@ Promise Returns:
 Options:
 
 Parameter         | Description
-:---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
