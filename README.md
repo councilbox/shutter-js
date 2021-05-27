@@ -66,6 +66,7 @@ The following service methods are available to instantiated clients. The example
 - [attendees](#attendees)
   - [list](#list-2)
   - [get](#get-1)
+  - [getURL](#get-url)
   - [create](#create-3)
   - [update](#update-2)
   - [delete](#delete-3)
@@ -1056,6 +1057,34 @@ Promise Returns:
   language: 'en',
   data: null
  }
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+id                | Attendee ID
+
+#### get URL
+
+`shutter.attendees.getURL({ roomNumber, id })`
+
+Example:
+
+```js
+try {
+  const attendeeURL = await shutter.attendees.getURL({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
+  console.log(attendeeURL) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```
+https://<shutter_domain>/room/<token>
 ```
 
 Options:
