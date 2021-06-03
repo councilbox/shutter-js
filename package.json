@@ -1,6 +1,6 @@
 {
   "name": "@councilbox/shutter-js",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Shutter API - javascript SDK",
   "homepage": "https://github.com/Councilbox/shutter-js#readme",
   "bugs": {
