@@ -58,22 +58,25 @@ The following service methods are available to instantiated clients. The example
   - [create](#create-2)
   - [update](#update-1)
   - [delete](#delete-2)
-  - [startRecording](#start-recording)
-  - [stopRecording](#stop-recording)
-  - [startStreaming](#start-streaming)
-  - [stopStreaming](#stop-streaming)
-  - [attendeesUrls](#attendees-urls)
+  - [startRecording](#startrecording)
+  - [stopRecording](#stoprecording)
+  - [startStreaming](#startstreaming)
+  - [stopStreaming](#stopstreaming)
+  - [attendeesUrls](#attendeesurls)
 - [attendees](#attendees)
   - [list](#list-2)
   - [get](#get-1)
-  - [getURL](#get-url)
+  - [getURL](#geturl)
   - [create](#create-3)
   - [update](#update-2)
   - [delete](#delete-3)
-  - [raiseHand](#raise-hand)
-  - [lowerHand](#lower-hand)
-  - [grantWord](#grant-word)
-  - [denyWord](#deny-word)
+  - [raiseHand](#raisehand)
+  - [lowerHand](#lowerhand)
+  - [grantWord](#grantword)
+  - [denyWord](#denyword)
+- [recordings](#recordings)
+  - [list](#list-3)
+  - [getIframeUrl](#getiframeurl)
 
 Method naming conventions:
 
@@ -1483,3 +1486,72 @@ Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
+
+### recordings
+
+#### list
+
+`shutter.recordings.list({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const recordings = await shutter.recordings.list({ roomNumber: '109e5704fd41a639344b9432' });
+  console.log(recordings) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```
+[
+  {
+    name: '60b89e4bf36ed0194f4189ca',
+    mixed: false,
+    mixProgress: 0,
+    uploaded: false,
+    uploadProgress: 0,
+    duration: 0,
+    size: 0,
+    creationDate: '1622711886052',
+    finishDate: null
+  },
+  ...
+]
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+
+#### getIframeUrl
+
+`shutter.recordings.getIframeUrl({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const recordingsIframeUrl = await shutter.recordings.getIframeUrl({ roomNumber: '109e5704fd41a639344b9432' });
+  console.log(recordingsIframeUrl) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```
+https://<shutter_domain>/recordings/<token>
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
