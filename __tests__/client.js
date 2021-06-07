@@ -12,7 +12,7 @@ back.fixtures = `${__dirname}/nockFixtures`;
 
 back.setMode('lockdown');
 
-/* describe('missing arguments', () => {
+describe.skip('missing arguments', () => {
 	test('no arguments', () => {
 		expect(new Shutter()).toThrowErrorMatchingInlineSnapshot(
 			'"Parameter \\"email\\" is required"'
@@ -43,7 +43,7 @@ back.setMode('lockdown');
 			'"Parameter \\"uri\\" is required"'
 		);
 	});
-}); */
+});
 
 describe('full config', () => {
 	describe('Events', () => {
