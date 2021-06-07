@@ -1506,7 +1506,7 @@ try {
 
 Promise Returns:
 
-```
+```js
 [
   {
     name: '60b89e4bf36ed0194f4189ca',
@@ -1555,3 +1555,14 @@ Options:
 Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
+
+## Testing
+
+### LOGIN
+
+```sh
+curl --location --request POST 'http://example.test/graphql' \
+  --header 'Content-Type: application/json' \
+  --data-raw \
+    '{"query":"mutation login($credentials: Credentials!){\n  login(credentials: $credentials)\n}","variables":{"credentials":{"email":"test_account@shutter.com","password":"abc1234"}}}'
+```
