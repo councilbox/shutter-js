@@ -1517,7 +1517,10 @@ Promise Returns:
     duration: 0,
     size: 0,
     creationDate: '1622711886052',
-    finishDate: null
+    finishDate: null,
+    posterUrl: 'https://<shutter_domain>/recordings/poster?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
+    downloadUrl: 'https://<shutter_domain>/recordings/get?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
+    streamingUrl: 'https://<shutter_domain>/recordings/streaming?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>'
   },
   ...
 ]
