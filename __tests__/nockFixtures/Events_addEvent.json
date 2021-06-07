@@ -4,7 +4,7 @@
         "method": "POST",
         "path": "/graphql",
         "body": {
-            "operationName": "addEvent",
+            "query": "\n\tmutation addEvent($event: EventInfo!) {\n\t\taddEvent(event: $event) {\n\t\t\tid\n\t\t\ttype\n\t\t\troomNumber\n\t\t\tattendeeID\n\t\t\tdate\n\t\t\tip\n\t\t\tplatform {\n\t\t\t\tosName\n\t\t\t\tosVersion\n\t\t\t\tbrowserName\n\t\t\t\tbrowserVersion\n\t\t\t\tuserAgent\n\t\t\t}\n\t\t\taudioSource\n\t\t\tvideoSource\n\t\t\taudioDevices {\n\t\t\t\tdeviceId\n\t\t\t\tlabel\n\t\t\t\tkind\n\t\t\t\tgroupId\n\t\t\t}\n\t\t\tvideoDevices {\n\t\t\t\tdeviceId\n\t\t\t\tlabel\n\t\t\t\tkind\n\t\t\t\tgroupId\n\t\t\t}\n\t\t\tpeerID\n\t\t\tdisplayName\n\t\t\terror\n\t\t\treason\n\t\t\tcontent\n\t\t\told\n\t\t}\n\t}\n",
             "variables": {
                 "event": {
                     "type": "[UnitTest] CONNECTION",
@@ -26,25 +26,49 @@
                     "reason": "String"
                 }
             },
-            "query": "mutation addEvent($event: EventInfo!) {\n  addEvent(event: $event) {\n    id\n    type\n    roomNumber\n    attendeeID\n    date\n    ip\n    platform {\n      osName\n      osVersion\n      browserName\n      browserVersion\n      userAgent\n    }\n    audioSource\n    videoSource\n    audioDevices {\n      deviceId\n      label\n      kind\n      groupId\n    }\n    videoDevices {\n      deviceId\n      label\n      kind\n      groupId\n    }\n    peerID\n    displayName\n    error\n    reason\n    content\n    old\n  }\n}\n"
+            "operationName": "addEvent"
         },
         "status": 200,
-        "response": [
-            "1f8b080000000000000355914d6bc3300c86effb15c3e731f2e538ed6db43df4921ed2ed527a702c25189238d84e4729f9ef93436918c6605e3db2a4570f06d24bb67d300970b8e1e0c35b03dbb23c8ab8e02a4b933ace81d79bbc16aa5639fb60fe3e221197ef41fb333a7f7ddf9dcaf2b03b1f4f2585ad317d39f5355a8278532745a104149ba8c9b8e4455c242966c449ef7100c4e3fec5412a329418e5a9e000545e11472d8672711e471b11f13ccb1241b21e839888cf884e4cc2d849df18db87118c2b651fb2f4a9a290713f689d364348096c6dcdaf43fb842ad948ab57798579a83411f9d52ee630070e5a4997cd34c104da5466b22a94eab50a5fdf34e02a2ad9077121f778d30a1ddb5eae4fec9f3222dac50b27a1cd306db1a54cd08e06bb3f3b5d3da7105a6b82c795b77a08ac45e996195f8a3203994c5b1da6ae231f3a5a6d78cef3fcf607ddc26d19fd010000"
-        ],
+        "response": {
+            "data": {
+                "addEvent": {
+                    "id": "60bdf4c70b1d2a96a99b125a",
+                    "type": "[UnitTest] CONNECTION",
+                    "roomNumber": "5fb288c7d890f45a581823e4",
+                    "attendeeID": "5fb288d374eae06375dd75cc",
+                    "date": "1623061703484",
+                    "ip": "127.0.0.1",
+                    "platform": {
+                        "osName": "iOS",
+                        "osVersion": "11",
+                        "browserName": "Safari",
+                        "browserVersion": "57",
+                        "userAgent": "sdsdgasdg"
+                    },
+                    "audioSource": "mic1",
+                    "videoSource": "cam1",
+                    "audioDevices": [],
+                    "videoDevices": [],
+                    "peerID": "sadg4e3geg",
+                    "displayName": "[UnitTest]",
+                    "error": "String",
+                    "reason": "String",
+                    "content": null,
+                    "old": null
+                }
+            }
+        },
         "rawHeaders": [
             "Server",
-            "nginx/1.10.3 (Ubuntu)",
+            "nginx/1.18.0 (Ubuntu)",
             "Date",
-            "Mon, 18 Jan 2021 11:49:24 GMT",
+            "Mon, 07 Jun 2021 10:28:23 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
-            "Transfer-Encoding",
-            "chunked",
+            "Content-Length",
+            "509",
             "Connection",
             "close",
-            "Vary",
-            "Accept-Encoding",
             "Access-Control-Allow-Origin",
             "*",
             "X-DNS-Prefetch-Control",
@@ -58,11 +82,7 @@
             "X-XSS-Protection",
             "1; mode=block",
             "ETag",
-            "W/\"1fd-NRIYtfLqyU7Jyhjc3G8fG2WeUcM\"",
-            "Strict-Transport-Security",
-            "max-age=31536000; includeSubDomains",
-            "Content-Encoding",
-            "gzip"
+            "W/\"1fd-h4kfnlR7sWE789kkX0lTXxdlvUo\""
         ],
         "responseIsBinary": false
     }
