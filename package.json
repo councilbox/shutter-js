@@ -1,6 +1,6 @@
 {
   "name": "@councilbox/shutter-js",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Shutter API - javascript SDK",
   "homepage": "https://github.com/Councilbox/shutter-js#readme",
   "bugs": {
@@ -22,14 +22,15 @@
   ],
   "author": "Miguel Rodriguez Crespo <mirodriguez11@gmail.com>",
   "contributors": [
+    "Alejandro Rivas Quintana <alejandro.rivas@councilbox.com>",
     "Jesús Leganés-Combarro 'piranna' <piranna@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "^3.3.18",
+    "apollo-fetch": "^0.7.0",
     "cross-fetch": "^3.1.4",
     "graphql": "^15.5.0",
-    "react": "^17.0.2"
+    "graphql-tag": "^2.12.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.2",
@@ -46,8 +47,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
+      "pre-commit": "npm run lint"
     }
   }
 }
