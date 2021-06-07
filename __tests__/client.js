@@ -20,28 +20,30 @@ describe.skip('missing arguments', () => {
 	});
 
 	test('no email', () => {
-		expect(new Shutter({
-			password: 'your_pass'
-		})).toThrowErrorMatchingInlineSnapshot(
-			'"Parameter \\"email\\" is required"'
-		);
+		expect(
+			new Shutter({
+				password: 'your_pass',
+			})
+		).toThrowErrorMatchingInlineSnapshot('"Parameter \\"email\\" is required"');
 	});
 
 	test('email, no password', () => {
-		expect(new Shutter({
-			email: 'example@mail.com',
-		})).toThrowErrorMatchingInlineSnapshot(
+		expect(
+			new Shutter({
+				email: 'example@mail.com',
+			})
+		).toThrowErrorMatchingInlineSnapshot(
 			'"Parameter \\"password\\" is required"'
 		);
 	});
 
 	test('email and password, no uri', () => {
-		expect(new Shutter({
-			email: 'example@mail.com',
-			password: 'your_pass',
-		})).toThrowErrorMatchingInlineSnapshot(
-			'"Parameter \\"uri\\" is required"'
-		);
+		expect(
+			new Shutter({
+				email: 'example@mail.com',
+				password: 'your_pass',
+			})
+		).toThrowErrorMatchingInlineSnapshot('"Parameter \\"uri\\" is required"');
 	});
 });
 
