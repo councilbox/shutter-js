@@ -1550,7 +1550,7 @@ try {
 Promise Returns:
 
 ```
-https://<shutter_domain>/recordings/<token>
+https://<shutter_domain>/recordings/<roomNumber>/<token>
 ```
 
 Options:
@@ -1559,13 +1559,3 @@ Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
-## Testing
-
-### LOGIN
-
-```sh
-curl --location --request POST 'http://example.test/graphql' \
-  --header 'Content-Type: application/json' \
-  --data-raw \
-    '{"query":"mutation login($credentials: Credentials!){\n  login(credentials: $credentials)\n}","variables":{"credentials":{"email":"test_account@shutter.com","password":"abc1234"}}}'
-```
