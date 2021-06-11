@@ -58,6 +58,8 @@ The following service methods are available to instantiated clients. The example
   - [create](#create-2)
   - [update](#update-1)
   - [delete](#delete-2)
+  - [start](#start)
+  - [close](#close)
   - [startRecording](#startrecording)
   - [stopRecording](#stoprecording)
   - [startStreaming](#startstreaming)
@@ -754,6 +756,86 @@ Promise Returns:
   autoRecord: false,
   recording: false,
   deletedAt: '1620989709156'
+}
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+
+#### start
+
+`shutter.rooms.start({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const startedRoom = await shutter.rooms.start({ roomNumber: "109e5704fd41a639344b9432" });
+  console.log(startedRoom) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+  userID: '109bec0f8aaef2395f481059',
+  organizationID: '109e5700fd41a639344b942c',
+  type: 'MEET',
+  displayName: 'Meeting test Updated',
+  urlLiveStreaming: '',
+  canLiveStreaming: false,
+  autoLiveStreaming: false,
+  liveStreaming: false,
+  canRecord: false,
+  autoRecord: false,
+  recording: false,
+  state: 'STARTED'
+}
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+
+#### close
+
+`shutter.rooms.close({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const closedRoom = await shutter.rooms.close({ roomNumber: "109e5704fd41a639344b9432" });
+  console.log(closedRoom) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+  userID: '109bec0f8aaef2395f481059',
+  organizationID: '109e5700fd41a639344b942c',
+  type: 'MEET',
+  displayName: 'Meeting test Updated',
+  urlLiveStreaming: '',
+  canLiveStreaming: false,
+  autoLiveStreaming: false,
+  liveStreaming: false,
+  canRecord: false,
+  autoRecord: false,
+  recording: false,
+  state: 'FINISHED'
 }
 ```
 
