@@ -10,7 +10,8 @@
     "local": "node test.local.js",
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "prepare": "husky install"
   },
   "keywords": [
     "shutter",
@@ -40,14 +41,9 @@
     "eslint": "^7.28.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest": "^24.3.6",
-    "husky": "^4.3.8",
+    "husky": "^6.0.0",
     "jest-cli": "^27.0.4",
     "nock": "^13.1.0",
     "prettier": "^2.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
   }
 }
