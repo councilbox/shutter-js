@@ -13,7 +13,7 @@ const users = new Users(
 
 back.fixtures = `${__dirname}/nockFixtures`;
 
-back.setMode('record');
+back.setMode('lockdown');
 
 test('me', () => {
 	const promise = back('users/me.json').then(({ nockDone }) => users.me().finally(nockDone));

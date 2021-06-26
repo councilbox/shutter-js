@@ -13,7 +13,7 @@ const attendees = new Attendees(
 
 back.fixtures = `${__dirname}/nockFixtures`;
 
-back.setMode('record');
+back.setMode('lockdown');
 
 describe('list', () => {
 	test('no arguments', () => {

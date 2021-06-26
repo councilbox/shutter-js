@@ -13,7 +13,7 @@ const rooms = new Rooms(
 
 back.fixtures = `${__dirname}/nockFixtures`;
 
-back.setMode('record');
+back.setMode('lockdown');
 
 test('list', () => {
 	const promise = back('rooms/list.json').then(({ nockDone }) => rooms.list().finally(nockDone));

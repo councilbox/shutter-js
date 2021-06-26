@@ -13,7 +13,7 @@ const organizations = new Organizations(
 
 back.fixtures = `${__dirname}/nockFixtures`;
 
-back.setMode('record');
+back.setMode('lockdown');
 
 test('list', () => {
 	const promise = back('organizations/list.json').then(({ nockDone }) => organizations.list().finally(nockDone));
