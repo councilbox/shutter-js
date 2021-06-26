@@ -1,0 +1,72 @@
+[
+    {
+        "scope": "http://example.test:80",
+        "method": "POST",
+        "path": "/graphql",
+        "body": {
+            "query": "\n\tmutation updateAttendee($roomNumber: String!, $attendee: UpdateAttendeeInfo!) {\n\t\tupdateAttendee(roomNumber: $roomNumber, attendee: $attendee) {\n\t\t\tid\n\t\t\texternalID\n\t\t\trole\n\t\t\tcanShareScreen\n\t\t\tcanBroadcast\n\t\t\tcanChat\n\t\t\tcanMuteAudio\n\t\t\tcanMuteVideo\n\t\t\tcanMuteAudioAll\n\t\t\tcanMuteVideoAll\n\t\t\tcanShareFiles\n\t\t\tcanSeeAttendeesList\n\t\t\tcanRaiseHand\n\t\t\traisedHand\n\t\t\tbroadcasting\n\t\t\tmutedMic\n\t\t\tmutedCam\n\t\t\tdisplayName\n\t\t\temail\n\t\t\tlanguage\n\t\t\tdata\n\t\t}\n\t}\n",
+            "variables": {},
+            "operationName": "updateAttendee"
+        },
+        "status": 400,
+        "response": {
+            "errors": [
+                {
+                    "message": "Variable \"$roomNumber\" of required type \"String!\" was not provided.",
+                    "code": "INTERNAL_SERVER_ERROR",
+                    "locations": [
+                        {
+                            "line": 2,
+                            "column": 26
+                        }
+                    ]
+                },
+                {
+                    "message": "Variable \"$attendee\" of required type \"UpdateAttendeeInfo!\" was not provided.",
+                    "code": "INTERNAL_SERVER_ERROR",
+                    "locations": [
+                        {
+                            "line": 2,
+                            "column": 48
+                        }
+                    ]
+                }
+            ]
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx/1.18.0 (Ubuntu)",
+            "Date",
+            "Sat, 26 Jun 2021 09:49:01 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "331",
+            "Connection",
+            "close",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "ETag",
+            "W/\"14b-cMXdI/2Tu9+qzQHxvK+0TosbQv4\""
+        ],
+        "responseIsBinary": false
+    }
+]
