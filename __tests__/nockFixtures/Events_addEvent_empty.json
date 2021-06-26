@@ -1,0 +1,87 @@
+[
+    {
+        "scope": "http://example.test:80",
+        "method": "POST",
+        "path": "/graphql",
+        "body": {
+            "query": "\n\tmutation addEvent($event: EventInfo!) {\n\t\taddEvent(event: $event) {\n\t\t\tid\n\t\t\ttype\n\t\t\troomNumber\n\t\t\tattendeeID\n\t\t\tdate\n\t\t\tip\n\t\t\tplatform {\n\t\t\t\tosName\n\t\t\t\tosVersion\n\t\t\t\tbrowserName\n\t\t\t\tbrowserVersion\n\t\t\t\tuserAgent\n\t\t\t}\n\t\t\taudioSource\n\t\t\tvideoSource\n\t\t\taudioDevices {\n\t\t\t\tdeviceId\n\t\t\t\tlabel\n\t\t\t\tkind\n\t\t\t\tgroupId\n\t\t\t}\n\t\t\tvideoDevices {\n\t\t\t\tdeviceId\n\t\t\t\tlabel\n\t\t\t\tkind\n\t\t\t\tgroupId\n\t\t\t}\n\t\t\tpeerID\n\t\t\tdisplayName\n\t\t\terror\n\t\t\treason\n\t\t\tcontent\n\t\t\told\n\t\t}\n\t}\n",
+            "variables": {
+                "event": {}
+            },
+            "operationName": "addEvent"
+        },
+        "status": 400,
+        "response": {
+            "errors": [
+                {
+                    "message": "Variable \"$event\" got invalid value {}; Field \"type\" of required type \"String!\" was not provided.",
+                    "code": "BAD_USER_INPUT",
+                    "locations": [
+                        {
+                            "line": 2,
+                            "column": 20
+                        }
+                    ],
+                    "originalError": {}
+                },
+                {
+                    "message": "Variable \"$event\" got invalid value {}; Field \"roomNumber\" of required type \"String!\" was not provided.",
+                    "code": "BAD_USER_INPUT",
+                    "locations": [
+                        {
+                            "line": 2,
+                            "column": 20
+                        }
+                    ],
+                    "originalError": {}
+                },
+                {
+                    "message": "Variable \"$event\" got invalid value {}; Field \"attendeeID\" of required type \"String!\" was not provided.",
+                    "code": "BAD_USER_INPUT",
+                    "locations": [
+                        {
+                            "line": 2,
+                            "column": 20
+                        }
+                    ],
+                    "originalError": {}
+                }
+            ]
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx/1.18.0 (Ubuntu)",
+            "Date",
+            "Sat, 26 Jun 2021 11:18:45 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "619",
+            "Connection",
+            "close",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "ETag",
+            "W/\"26b-2gBMdq+xEXTx2UyugUvWhPT/1JY\""
+        ],
+        "responseIsBinary": false
+    }
+]

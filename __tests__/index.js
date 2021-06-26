@@ -119,6 +119,50 @@ describe('full config', () => {
                 }
               `);
 		});
+
+		test('addEvent (empty)', () => {
+			const event = {};
+
+			const promise = back('Events_addEvent_empty.json').then(({ nockDone }) => shutter.events.create(event).finally(nockDone));
+
+			return expect(promise).rejects.toMatchInlineSnapshot(`
+                Array [
+                  Object {
+                    "code": "BAD_USER_INPUT",
+                    "locations": Array [
+                      Object {
+                        "column": 20,
+                        "line": 2,
+                      },
+                    ],
+                    "message": "Variable \\"$event\\" got invalid value {}; Field \\"type\\" of required type \\"String!\\" was not provided.",
+                    "originalError": Object {},
+                  },
+                  Object {
+                    "code": "BAD_USER_INPUT",
+                    "locations": Array [
+                      Object {
+                        "column": 20,
+                        "line": 2,
+                      },
+                    ],
+                    "message": "Variable \\"$event\\" got invalid value {}; Field \\"roomNumber\\" of required type \\"String!\\" was not provided.",
+                    "originalError": Object {},
+                  },
+                  Object {
+                    "code": "BAD_USER_INPUT",
+                    "locations": Array [
+                      Object {
+                        "column": 20,
+                        "line": 2,
+                      },
+                    ],
+                    "message": "Variable \\"$event\\" got invalid value {}; Field \\"attendeeID\\" of required type \\"String!\\" was not provided.",
+                    "originalError": Object {},
+                  },
+                ]
+              `);
+		});
 	});
 
 	describe('Me', () => {
