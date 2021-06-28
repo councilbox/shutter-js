@@ -2,6 +2,7 @@
   "name": "@councilbox/shutter-js",
   "version": "1.0.0",
   "description": "Shutter API - javascript SDK",
+  "main": "lib",
   "homepage": "https://github.com/Councilbox/shutter-js#readme",
   "bugs": {
     "url": "https://github.com/Councilbox/shutter-js/issues"
@@ -30,20 +31,20 @@
   "dependencies": {
     "apollo-fetch": "^0.7.0",
     "cross-fetch": "^3.1.4",
-    "graphql": "^15.5.0",
-    "graphql-tag": "^2.12.4"
+    "graphql": "^15.5.1",
+    "graphql-tag": "^2.12.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@babel/eslint-parser": "^7.14.5",
-    "@babel/preset-env": "^7.14.5",
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
     "@councilbox/eslint-config-base": "^0.0.1",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jest": "^24.3.6",
     "husky": "^6.0.0",
-    "jest-cli": "^27.0.4",
+    "jest-cli": "^27.0.5",
     "nock": "^13.1.0",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.2"
   }
 }

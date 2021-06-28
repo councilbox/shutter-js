@@ -2,5 +2,6 @@
 .idea/
 coverage/
 node_modules/
+*.tgz
 config.js
 test.local.js
