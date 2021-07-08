@@ -335,9 +335,9 @@ describe('stopRecording', () => {
 	});
 });
 
-describe('startStreaming', () => {
+describe('startMassiveStreaming', () => {
 	test('no arguments', () => {
-		const promise = back('rooms/startStreaming.json').then(({ nockDone }) => rooms.startStreaming().finally(nockDone));
+		const promise = back('rooms/startMassiveStreaming.json').then(({ nockDone }) => rooms.startMassiveStreaming().finally(nockDone));
 
 		return expect(promise).rejects.toMatchInlineSnapshot(
 			"[TypeError: Cannot destructure property 'roomNumber' of '_ref9' as it is undefined.]"
@@ -345,8 +345,8 @@ describe('startStreaming', () => {
 	});
 
 	test('no roomNumber', () => {
-		const promise = back('rooms/startStreaming_no_roomNumber.json').then(
-			({ nockDone }) => rooms.startStreaming({}).finally(nockDone)
+		const promise = back('rooms/startMassiveStreaming_no_roomNumber.json').then(
+			({ nockDone }) => rooms.startMassiveStreaming({}).finally(nockDone)
 		);
 
 		return expect(promise).rejects.toMatchInlineSnapshot(`
@@ -366,17 +366,17 @@ describe('startStreaming', () => {
 	});
 
 	test.skip('roomNumber', () => {
-		const promise = back('rooms/startStreaming_roomNumber.json').then(
-			({ nockDone }) => rooms.startStreaming({}).finally(nockDone)
+		const promise = back('rooms/startMassiveStreaming_roomNumber.json').then(
+			({ nockDone }) => rooms.startMassiveStreaming({}).finally(nockDone)
 		);
 
 		return expect(promise).resolves.toMatchInlineSnapshot();
 	});
 });
 
-describe('stopStreaming', () => {
+describe('stopMassiveStreaming', () => {
 	test('no arguments', () => {
-		const promise = back('rooms/stopStreaming.json').then(({ nockDone }) => rooms.stopStreaming().finally(nockDone));
+		const promise = back('rooms/stopMassiveStreaming.json').then(({ nockDone }) => rooms.stopMassiveStreaming().finally(nockDone));
 
 		return expect(promise).rejects.toMatchInlineSnapshot(
 			"[TypeError: Cannot destructure property 'roomNumber' of '_ref10' as it is undefined.]"
@@ -384,8 +384,8 @@ describe('stopStreaming', () => {
 	});
 
 	test('no roomNumber', () => {
-		const promise = back('rooms/stopStreaming_no_roomNumber.json').then(
-			({ nockDone }) => rooms.stopStreaming({}).finally(nockDone)
+		const promise = back('rooms/stopMassiveStreaming_no_roomNumber.json').then(
+			({ nockDone }) => rooms.stopMassiveStreaming({}).finally(nockDone)
 		);
 
 		return expect(promise).rejects.toMatchInlineSnapshot(`
@@ -405,8 +405,8 @@ describe('stopStreaming', () => {
 	});
 
 	test.skip('roomNumber', () => {
-		const promise = back('rooms/stopStreaming_roomNumber.json').then(
-			({ nockDone }) => rooms.stopStreaming({}).finally(nockDone)
+		const promise = back('rooms/stopMassiveStreaming_roomNumber.json').then(
+			({ nockDone }) => rooms.stopMassiveStreaming({}).finally(nockDone)
 		);
 
 		return expect(promise).resolves.toMatchInlineSnapshot();
