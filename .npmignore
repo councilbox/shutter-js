@@ -1,0 +1,7 @@
+__tests__/
+.husky/
+coverage/
+.eslintrc
+*.tgz
+babel.config.json
+config.example.js
