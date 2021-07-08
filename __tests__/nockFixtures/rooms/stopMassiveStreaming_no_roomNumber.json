@@ -4,9 +4,9 @@
         "method": "POST",
         "path": "/graphql",
         "body": {
-            "query": "\n\tmutation startLiveStreaming($roomNumber: String!) {\n\t\tstartLiveStreaming(roomNumber: $roomNumber) {\n\t\t\tuserID\n\t\t\torganizationID\n\t\t\ttype\n\t\t\tdisplayName\n\t\t\turlLiveStreaming\n\t\t\tcanLiveStreaming\n\t\t\tautoLiveStreaming\n\t\t\tliveStreaming\n\t\t\tcanRecord\n\t\t\tautoRecord\n\t\t\trecording\n\t\t}\n\t}\n",
+            "query": "\n\tmutation stopMassiveStreaming($roomNumber: String!) {\n\t\tstopMassiveStreaming(roomNumber: $roomNumber) {\n\t\t\tuserID\n\t\t\torganizationID\n\t\t\ttype\n\t\t\tdisplayName\n\t\t\tmassive\n\t\t\tmassiveStreaming\n\t\t\tcanRecord\n\t\t\tautoRecord\n\t\t\trecording\n\t\t}\n\t}\n",
             "variables": {},
-            "operationName": "startLiveStreaming"
+            "operationName": "stopMassiveStreaming"
         },
         "status": 400,
         "response": {
@@ -17,7 +17,7 @@
                     "locations": [
                         {
                             "line": 2,
-                            "column": 30
+                            "column": 29
                         }
                     ]
                 }
@@ -55,7 +55,7 @@
             "X-XSS-Protection",
             "0",
             "ETag",
-            "W/\"a7-KwSd3RPj5LxhlXhMdTPKqqnlo/o\""
+            "W/\"a7-FIiPShcNqu4pcUOWnbdF+gRWWsQ\""
         ],
         "responseIsBinary": false
     }
