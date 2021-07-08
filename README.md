@@ -62,8 +62,8 @@ The following service methods are available to instantiated clients. The example
   - [close](#close)
   - [startRecording](#startrecording)
   - [stopRecording](#stoprecording)
-  - [startStreaming](#startstreaming)
-  - [stopStreaming](#stopstreaming)
+  - [startMassiveStreaming](#startmassivestreaming)
+  - [stopMassiveStreaming](#stopmassivestreaming)
   - [attendeesUrls](#attendeesurls)
 - [attendees](#attendees)
   - [list](#list-2)
@@ -923,16 +923,16 @@ Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
-#### startStreaming
+#### startMassiveStreaming
 
-`shutter.rooms.startStreaming({ roomNumber })`
+`shutter.rooms.startMassiveStreaming({ roomNumber })`
 
 Example:
 
 ```js
 try {
-  const streamingStarted = await shutter.rooms.startStreaming({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(streamingStarted) // logs response data
+  const massiveStreamingStarted = await shutter.rooms.startMassiveStreaming({ roomNumber: "109e5704fd41a639344b9432" });
+  console.log(massiveStreamingStarted) // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -946,10 +946,8 @@ Promise Returns:
   organizationID: '109e5700fd41a639344b942c',
   type: 'MEET',
   displayName: 'Meeting test Updated',
-  urlLiveStreaming: '',
-  canLiveStreaming: ftruealse,
-  autoLiveStreaming: false,
-  liveStreaming: true,
+  massive: true,
+  massiveStreaming: true,
   canRecord: true,
   autoRecord: false,
   recording: false
@@ -962,16 +960,16 @@ Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 
-#### stopStreaming
+#### stopMassiveStreaming
 
-`shutter.rooms.stopStreaming({ roomNumber })`
+`shutter.rooms.stopMassiveStreaming({ roomNumber })`
 
 Example:
 
 ```js
 try {
-  const streamingStopped = await shutter.rooms.stopStreaming({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(streamingStopped) // logs response data
+  const massiveStreamingStopped = await shutter.rooms.stopMassiveStreaming({ roomNumber: "109e5704fd41a639344b9432" });
+  console.log(massiveStreamingStopped) // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -985,10 +983,8 @@ Promise Returns:
   organizationID: '109e5700fd41a639344b942c',
   type: 'MEET',
   displayName: 'Meeting test Updated',
-  urlLiveStreaming: '',
-  canLiveStreaming: ftruealse,
-  autoLiveStreaming: false,
-  liveStreaming: false,
+  massive: true,
+  massiveStreaming: true,
   canRecord: true,
   autoRecord: false,
   recording: false
