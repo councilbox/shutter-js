@@ -4,7 +4,7 @@
         "method": "POST",
         "path": "/graphql",
         "body": {
-            "query": "\n\tmutation startRoom($roomNumber: String!) {\n\t\tstartRoom(roomNumber: $roomNumber) {\n\t\t\tuserID\n\t\t\torganizationID\n\t\t\ttype\n\t\t\tdisplayName\n\t\t\turlLiveStreaming\n\t\t\tcanLiveStreaming\n\t\t\tautoLiveStreaming\n\t\t\tliveStreaming\n\t\t\turlExternalLiveStreaming\n\t\t    canExternalLiveStreaming\n\t\t    autoExternalLiveStreaming\n\t\t    externalLiveStreaming\n\t\t\tcanRecord\n\t\t\tautoRecord\n\t\t\trecording\n\t\t\tstate\n\t\t}\n\t}\n",
+            "query": "\n\tmutation startRoom($roomNumber: String!) {\n\t\tstartRoom(roomNumber: $roomNumber) {\n\t\t\tuserID\n\t\t\torganizationID\n\t\t\ttype\n\t\t\tdisplayName\n\t\t\tmassive\n\t\t\tmassiveStreaming\n\t\t\turlExternalLiveStreaming\n\t\tcanExternalLiveStreaming\n\t\tautoExternalLiveStreaming\n\t\t    externalLiveStreaming\n\t\t\tcanRecord\n\t\t\tautoRecord\n\t\t\trecording\n\t\t\tstate\n\t\t}\n\t}\n",
             "variables": {},
             "operationName": "startRoom"
         },

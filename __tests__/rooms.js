@@ -30,7 +30,7 @@ describe('get', () => {
 		);
 	});
 
-	test('no roomNumber', () => {
+	test.skip('no roomNumber', () => {
 		const promise = back('rooms/get_no_roomNumber.json').then(({ nockDone }) => rooms.get({}).finally(nockDone));
 
 		return expect(promise).rejects.toMatchInlineSnapshot(`
@@ -65,7 +65,7 @@ describe('create', () => {
 		);
 	});
 
-	test('no room', () => {
+	test.skip('no room', () => {
 		const promise = back('rooms/create_no_room.json').then(({ nockDone }) => rooms.create({}).finally(nockDone));
 
 		return expect(promise).rejects.toMatchInlineSnapshot(`
@@ -110,7 +110,7 @@ describe('update', () => {
 		);
 	});
 
-	test('no room', () => {
+	test.skip('no room', () => {
 		const promise = back('rooms/update_no_room.json').then(({ nockDone }) => rooms.update({}).finally(nockDone));
 
 		return expect(promise).rejects.toMatchInlineSnapshot(`
@@ -155,7 +155,7 @@ describe('delete', () => {
 		);
 	});
 
-	test('no roomNumber', () => {
+	test.skip('no roomNumber', () => {
 		const promise = back('rooms/delete_no_roomNumber.json').then(
 			({ nockDone }) => rooms.delete({}).finally(nockDone)
 		);
@@ -192,7 +192,7 @@ describe('start', () => {
 		);
 	});
 
-	test('no roomNumber', () => {
+	test.skip('no roomNumber', () => {
 		const promise = back('rooms/start_no_roomNumber.json').then(
 			({ nockDone }) => rooms.start({}).finally(nockDone)
 		);
