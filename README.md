@@ -72,6 +72,7 @@ The following service methods are available to instantiated clients. The example
   - [create](#create-3)
   - [update](#update-2)
   - [delete](#delete-3)
+  - [mute](#mute)
   - [raiseHand](#raisehand)
   - [lowerHand](#lowerhand)
   - [grantWord](#grantword)
@@ -1367,6 +1368,56 @@ Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
 id                | Attendee ID
+
+#### mute
+
+`shutter.attendees.mute({ roomNumber, id, type })`
+
+Example:
+
+```js
+try {
+  const mutedAttendee = await shutter.attendees.mute({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a', type: 'video });
+  console.log(mutedAttendee) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+  id: '109e5705fd41a639344b943a',
+  externalID: null,
+  role: 'SPEAKER',
+  canShareScreen: true,
+  canBroadcast: true,
+  canChat: true,
+  canMuteAudio: true,
+  canMuteVideo: true,
+  canMuteAudioAll: true,
+  canMuteVideoAll: true,
+  canShareFiles: false,
+  canSeeAttendeesList: true,
+  canRaiseHand: true,
+  broadcasting: true,
+  mutedMic: false,
+  mutedCam: true,
+  displayName: 'Speaker Test 2 Updated',
+  email: 'speaker2@shutter.com'
+  language: 'en',
+  data: null
+}
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+id                | Attendee ID
+type              | audio or video
 
 #### raiseHand
 
