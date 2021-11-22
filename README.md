@@ -80,6 +80,10 @@ The following service methods are available to instantiated clients. The example
 - [recordings](#recordings)
   - [list](#list-3)
   - [getIframeUrl](#getiframeurl)
+- [frames](#frames)
+  - [list](#list-4)
+  - [captureRoom](#captureroom)
+  - [captureAttendee](#captureattendee)
 
 Method naming conventions:
 
@@ -1690,4 +1694,113 @@ Options:
 Parameter         | Description
 :---------------- | :-----------------------------------------------------------
 roomNumber        | Room number or ID.
+
+### frames
+
+#### list
+
+`shutter.frames.list({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const frames = await shutter.frames.list({ roomNumber: '109e5704fd41a639344b9432' });
+  console.log(frames) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+[
+  {
+		"id": "619b6d6cb46138160aaac1c1",
+		"status": "DONE",
+		"date": "1637576044933",
+		"roomNumber": "109e5704fd41a639344b9432",
+		"attendeeID": "6194dd427fa3293dd6a12a9e",
+		"url": "https://<shutter_domain>/frames/get?id=619b6d6cb46138160aaac1c1&authorization=<token>"
+  },
+  ...
+]
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+
+#### captureRoom
+
+`shutter.frames.captureRoom({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const capturedFrames = await shutter.frames.captureRoom({ roomNumber: '109e5704fd41a639344b9432' });
+  console.log(capturedFrames) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+[
+  {
+		"id": "619b6d7bb46138160aaac1dc",
+		"status": "IN_PROGRESS",
+		"date": "1637576059301",
+		"roomNumber": "109e5704fd41a639344b9432",
+		"attendeeID": "6194dcb07fa3293dd6a129b4"
+  },
+  ...
+]
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+
+#### captureAttendee
+
+`shutter.frames.captureAttendee({ roomNumber, attendeeID })`
+
+Example:
+
+```js
+try {
+  const capturedFrame = await shutter.frames.captureAttendee({ roomNumber: '109e5704fd41a639344b9432', attendeeID: '6194dd427fa3293dd6a12a9e' });
+  console.log(capturedFrame) // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+	"id": "619b6d6cb46138160aaac1c1",
+	"status": "IN_PROGRESS",
+	"date": "1637576044933",
+	"roomNumber": "109e5704fd41a639344b9432",
+	"attendeeID": "6194dd427fa3293dd6a12a9e"
+}
+```
+
+Options:
+
+Parameter         | Description
+:---------------- | :-----------------------------------------------------------
+roomNumber        | Room number or ID.
+attendeeID        | Attendee ID.
 
