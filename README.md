@@ -399,6 +399,8 @@ Promise Returns:
     enabledWaitingRoom: false,
     webhook: null,
     data: '',
+	view: 'grid',
+	theme: 'light',
     attendees: [
   {
    id: '109e5705fd41a639344b943a',
@@ -468,6 +470,8 @@ Promise Returns:
     enabledWaitingRoom: false,
     webhook: null,
     data: '',
+	view: 'grid',
+	theme: 'light',
     attendees: [
   {
    id: '109e5705fd41a639344b943a',
@@ -528,6 +532,8 @@ try {
   enabledWaitingRoom: false,
   webhook: null,
   data: '',
+  view: 'grid',
+  theme: 'light',
   attendees: [
    {
     email: 'moderator@shutter.com',
@@ -583,6 +589,8 @@ Promise Returns:
   enabledWaitingRoom: false,
   webhook: null,
   data: '',
+  view: 'grid',
+  theme: 'light',
   attendees: [
     {
       id: '109e5704fd41a639344b9433',
@@ -646,6 +654,8 @@ try {
   enabledWaitingRoom: false,
   webhook: null,
   data: '',
+  view: 'grid',
+  theme: 'light',
   attendees: [
    {
     email: 'moderator@shutter.com',
@@ -697,6 +707,8 @@ Promise Returns:
  enabledWaitingRoom: false,
  webhook: null,
  data: '',
+ view: 'grid',
+ theme: 'light',
  attendees: [
   {
    email: 'moderator@shutter.com',
