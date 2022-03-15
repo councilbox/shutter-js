@@ -1,6 +1,6 @@
 {
   "name": "@councilbox/shutter-js",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Shutter API - javascript SDK",
   "main": "lib",
   "homepage": "https://github.com/Councilbox/shutter-js#readme",
@@ -24,8 +24,7 @@
   ],
   "author": "Miguel Rodriguez Crespo <mirodriguez11@gmail.com>",
   "contributors": [
-    "Alejandro Rivas Quintana <alejandro.rivas@councilbox.com>",
-    "Jesús Leganés-Combarro 'piranna' <piranna@gmail.com>"
+    "Alejandro Rivas Quintana <alejandro.rivas@councilbox.com>"
   ],
   "license": "MIT",
   "dependencies": {
