@@ -1717,17 +1717,17 @@ Promise Returns:
     finishDate: null,
     posterUrl: 'https://<shutter_domain>/recordings/poster?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
     downloadUrl: 'https://<shutter_domain>/recordings/get?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
-    streamingUrl: 'https://<shutter_domain>/recordings/streaming?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>'
-	audioFile: true
-	extractedAudio: true
-	extractAudioProgress: 100
-	uploadedAudio: true
-	uploadAudioProgress: 100
-	audioDuration: 60
-	audioSize: 500
-	audioHash: '9778229a36d04eb676ad4bc6aad70d6ed8d6bbab88e9efb2aa74346509a3d77c'
-	audioHashType: 'SHA3-256'
-	downloadAudioUrl: 'https://<shutter_domain>/recordings/get?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&type=audio&authorization=<token>'
+    streamingUrl: 'https://<shutter_domain>/recordings/streaming?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
+	audioFile: true,
+	extractedAudio: true,
+	extractAudioProgress: 100,
+	uploadedAudio: true,
+	uploadAudioProgress: 100,
+	audioDuration: 60,
+	audioSize: 500,
+	audioHash: '9778229a36d04eb676ad4bc6aad70d6ed8d6bbab88e9efb2aa74346509a3d77c',
+	audioHashType: 'SHA3-256',
+	downloadAudioUrl: 'https://<shutter_domain>/recordings/get?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&type=audio&authorization=<token>',
 	streamingAudioUrl: 'https://<shutter_domain>/recordings/streaming?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&type=audio&authorization=<token>'
   },
   ...
