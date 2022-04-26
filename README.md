@@ -5,7 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/@councilbox/shutter-js)]()
 
 A javascript sdk for Shutter built with webpack, babel & es6. This can be used
-in node or in the browser*.
+in node or in the browser\*.
 
 NOTE: If used in the browser do not publish your private api key in frontend
 code.
@@ -30,12 +30,12 @@ Next, require the module and instantiate a shutter client by calling
 provided by shutter team.
 
 ```js
-import Shutter from '@councilbox/shutter-js';
+import Shutter from "@councilbox/shutter-js";
 
 const shutter = new Shutter({
   email: "example@mail.com",
   password: "your_pass_here",
-  uri: "example.shutter.com"
+  uri: "example.shutter.com",
 });
 ```
 
@@ -106,7 +106,7 @@ Example:
 ```js
 try {
   const me = await shutter.users.me();
-  console.log(me) // logs response data
+  console.log(me); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -144,12 +144,12 @@ Example:
 ```js
 try {
   const createdUser = await shutter.users.create({
- user: {
-  name: "test",
-  email: "test@shutter.com"
- }
+    user: {
+      name: "test",
+      email: "test@shutter.com",
+    },
   });
-  console.log(createdUser) // logs response data
+  console.log(createdUser); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -167,10 +167,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-name              | Name of the user.
-email             | Email address of the user. Example: "Jhon <jhon@host.com>".
+| Parameter | Description                                                 |
+| :-------- | :---------------------------------------------------------- |
+| name      | Name of the user.                                           |
+| email     | Email address of the user. Example: "Jhon <jhon@host.com>". |
 
 #### delete
 
@@ -180,8 +180,10 @@ Example:
 
 ```js
 try {
-  const deletedUser = await shutter.users.delete({ id: "109e4d75ec5805340e6ccaf7" });
-  console.log(deletedUser) // logs response data
+  const deletedUser = await shutter.users.delete({
+    id: "109e4d75ec5805340e6ccaf7",
+  });
+  console.log(deletedUser); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -205,9 +207,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-id                | User ID.
+| Parameter | Description |
+| :-------- | :---------- |
+| id        | User ID.    |
 
 ### organizations
 
@@ -220,7 +222,7 @@ Example:
 ```js
 try {
   const organizations = await shutter.organizations.list();
-  console.log(organizations) // logs response data
+  console.log(organizations); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -257,15 +259,16 @@ Example:
 ```js
 try {
   const organization = await shutter.organizations.create({
-   organization: {
-    name: `Test Org`,
-    logo: {
-      filetype: 'png',
-      base64: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII='
-    }
-   }
+    organization: {
+      name: `Test Org`,
+      logo: {
+        filetype: "png",
+        base64:
+          "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII=",
+      },
+    },
   });
-  console.log(organization) // logs response data
+  console.log(organization); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -283,10 +286,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-name              | Name of the organization.
-logo              | Need two fields: filetype -> file type (png, jpeg, gif...); base64 -> file base64 encoded string.
+| Parameter | Description                                                                                       |
+| :-------- | :------------------------------------------------------------------------------------------------ |
+| name      | Name of the organization.                                                                         |
+| logo      | Need two fields: filetype -> file type (png, jpeg, gif...); base64 -> file base64 encoded string. |
 
 #### update
 
@@ -298,15 +301,16 @@ Example:
 try {
   const updatedOrganization = await shutter.organizations.update({
     organization: {
-      id: '109e4d71ec5805340e6ccaf3',
+      id: "109e4d71ec5805340e6ccaf3",
       name: `Test Org Updated`,
       logo: {
-        filetype: 'png',
-        base64: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII='
-      }
-    }
+        filetype: "png",
+        base64:
+          "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDiNhdJPK0VhEMfxz3UlsmDBQkn+lPxZKJYsRCErO2WpvAXvwXuwJaykJGWHYmFhgZ2UUjZYyC0RizM3zz0d3alper7PzO/Mc2ZKim0ZvTn2gN18Yumfwn7c5+6qrEaoMZc0jDNcFXRVZVMpzAvAEMZwjdFgNwmrsYYCgQ6sRXwOT1ldgSvsROwOT1ldgQlsRmwKT1ldgbtIvMNbeMpqrOgn9qFdNuKRYE8JqysAr5FcKWA1VsIMFuJcwa1smR4wGfw8YSNoidqjMlaxh/cQ+sKl7M1daI5Oq2wcBzjFYhnTmI83fmJLtm2H+MEjThI2iE7M4qUU7WxjI3nKWRQsxXk/YXCMdaw0xJe7cRGX6chew/NjHJCtdaWMObTK9r4n2hbCbfjwN432yPmO2PQLRLdIycezsR4AAAAASUVORK5CYII=",
+      },
+    },
   });
-  console.log(updatedOrganization) // logs response data
+  console.log(updatedOrganization); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -324,11 +328,11 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-id                | Organization ID. (required).
-name              | Name of the organization.
-logo              | Need two fields: filetype -> file type (png, jpeg, gif...); base64 -> file base64 encoded string.
+| Parameter | Description                                                                                       |
+| :-------- | :------------------------------------------------------------------------------------------------ |
+| id        | Organization ID. (required).                                                                      |
+| name      | Name of the organization.                                                                         |
+| logo      | Need two fields: filetype -> file type (png, jpeg, gif...); base64 -> file base64 encoded string. |
 
 #### delete
 
@@ -338,8 +342,10 @@ Example:
 
 ```js
 try {
-  const deletedOrganization = await shutter.organizations.delete({ id: "109e4d71ec5805340e6ccaf3" });
-  console.log(deletedOrganization) // logs response data
+  const deletedOrganization = await shutter.organizations.delete({
+    id: "109e4d71ec5805340e6ccaf3",
+  });
+  console.log(deletedOrganization); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -357,9 +363,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-id                | Organization ID.
+| Parameter | Description      |
+| :-------- | :--------------- |
+| id        | Organization ID. |
 
 ### rooms
 
@@ -372,7 +378,7 @@ Example:
 ```js
 try {
   const rooms = await shutter.rooms.list();
-  console.log(rooms) // logs response data
+  console.log(rooms); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -444,7 +450,7 @@ Example:
 ```js
 try {
   const room = await shutter.rooms.get({ roomNumber: room.roomNumber });
-  console.log(room) // logs response data
+  console.log(room); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -506,9 +512,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### create
 
@@ -519,51 +525,51 @@ Example:
 ```js
 try {
   const room = await shutter.rooms.create({
-   room: {
-  type: 'MEET',
-  displayName: `Meeting test`,
-  externalID: 'test_2',
-  agenda: 'Meeting agenda',
-  urlExternalLiveStreaming: '',
-  canExternalLiveStreaming: false,
-  autoExternalLiveStreaming: false,
-  externalLiveStreaming: false,
-  locked: false,
-  enabledWaitingRoom: false,
-  webhook: null,
-  data: '',
-  view: 'grid',
-  theme: 'light',
-  attendees: [
-   {
-    email: 'moderator@shutter.com',
-    role: 'MODERATOR',
-    canShareScreen: true,
-    canBroadcast: true,
-    canChat: true,
-    canMuteAudio: true,
-    canMuteVideo: true,
-    canMuteAudioAll: true,
-    canMuteVideoAll: true,
-    canShareFiles: true,
-    canSeeAttendeesList: true,
-    canRaiseHand: true,
-    broadcasting: true,
-    mutedMic: false,
-    mutedCam: false,
-    displayName: 'Moderador',
-    language: 'es'
-   }
-  ],
-  password: 'abc12345',
-  canRecord: false,
-  autoRecord: false,
-  security: 'PRIVATE',
-  state: 'DRAFT'
-   },
-   organizationID: "109e5700fd41a639344b942c"
+    room: {
+      type: "MEET",
+      displayName: `Meeting test`,
+      externalID: "test_2",
+      agenda: "Meeting agenda",
+      urlExternalLiveStreaming: "",
+      canExternalLiveStreaming: false,
+      autoExternalLiveStreaming: false,
+      externalLiveStreaming: false,
+      locked: false,
+      enabledWaitingRoom: false,
+      webhook: null,
+      data: "",
+      view: "grid",
+      theme: "light",
+      attendees: [
+        {
+          email: "moderator@shutter.com",
+          role: "MODERATOR",
+          canShareScreen: true,
+          canBroadcast: true,
+          canChat: true,
+          canMuteAudio: true,
+          canMuteVideo: true,
+          canMuteAudioAll: true,
+          canMuteVideoAll: true,
+          canShareFiles: true,
+          canSeeAttendeesList: true,
+          canRaiseHand: true,
+          broadcasting: true,
+          mutedMic: false,
+          mutedCam: false,
+          displayName: "Moderador",
+          language: "es",
+        },
+      ],
+      password: "abc12345",
+      canRecord: false,
+      autoRecord: false,
+      security: "PRIVATE",
+      state: "DRAFT",
+    },
+    organizationID: "109e5700fd41a639344b942c",
   });
-  console.log(room) // logs response data
+  console.log(room); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -626,10 +632,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-room              | Room object
-organizationID    | Organization ID that room belongs to.
+| Parameter      | Description                           |
+| :------------- | :------------------------------------ |
+| room           | Room object                           |
+| organizationID | Organization ID that room belongs to. |
 
 #### update
 
@@ -740,10 +746,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-room              | Room object
-organizationID    | Organization ID that room belongs to.
+| Parameter      | Description                           |
+| :------------- | :------------------------------------ |
+| room           | Room object                           |
+| organizationID | Organization ID that room belongs to. |
 
 #### delete
 
@@ -753,8 +759,10 @@ Example:
 
 ```js
 try {
-  const deletedRoom = await shutter.rooms.delete({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(deletedRoom) // logs response data
+  const deletedRoom = await shutter.rooms.delete({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(deletedRoom); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -781,9 +789,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### start
 
@@ -793,8 +801,10 @@ Example:
 
 ```js
 try {
-  const startedRoom = await shutter.rooms.start({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(startedRoom) // logs response data
+  const startedRoom = await shutter.rooms.start({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(startedRoom); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -821,9 +831,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### close
 
@@ -833,8 +843,10 @@ Example:
 
 ```js
 try {
-  const closedRoom = await shutter.rooms.close({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(closedRoom) // logs response data
+  const closedRoom = await shutter.rooms.close({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(closedRoom); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -861,9 +873,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### startRecording
 
@@ -873,8 +885,10 @@ Example:
 
 ```js
 try {
-  const recordingStarted = await shutter.rooms.startRecording({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(recordingStarted) // logs response data
+  const recordingStarted = await shutter.rooms.startRecording({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(recordingStarted); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -900,9 +914,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### stopRecording
 
@@ -912,8 +926,10 @@ Example:
 
 ```js
 try {
-  const recordingStopped = await shutter.rooms.stopRecording({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(recordingStopped) // logs response data
+  const recordingStopped = await shutter.rooms.stopRecording({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(recordingStopped); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -939,9 +955,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### startMassiveStreaming
 
@@ -951,8 +967,10 @@ Example:
 
 ```js
 try {
-  const massiveStreamingStarted = await shutter.rooms.startMassiveStreaming({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(massiveStreamingStarted) // logs response data
+  const massiveStreamingStarted = await shutter.rooms.startMassiveStreaming({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(massiveStreamingStarted); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -976,9 +994,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### stopMassiveStreaming
 
@@ -988,8 +1006,10 @@ Example:
 
 ```js
 try {
-  const massiveStreamingStopped = await shutter.rooms.stopMassiveStreaming({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(massiveStreamingStopped) // logs response data
+  const massiveStreamingStopped = await shutter.rooms.stopMassiveStreaming({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(massiveStreamingStopped); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1013,9 +1033,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### attendeesUrls
 
@@ -1025,8 +1045,10 @@ Example:
 
 ```js
 try {
-  const attendeesUrls = await shutter.rooms.attendeesUrls({ roomNumber: "109e5704fd41a639344b9432" });
-  console.log(attendeesUrls) // logs response data
+  const attendeesUrls = await shutter.rooms.attendeesUrls({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(attendeesUrls); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1065,9 +1087,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 ### attendees
 
@@ -1079,8 +1101,10 @@ Example:
 
 ```js
 try {
-  const attendees = await shutter.attendees.list({ roomNumber: '109e5704fd41a639344b9432' });
-  console.log(attendees) // logs response data
+  const attendees = await shutter.attendees.list({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(attendees); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1116,9 +1140,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### get
 
@@ -1128,8 +1152,11 @@ Example:
 
 ```js
 try {
-  const attendee = await shutter.attendees.get({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(attendee) // logs response data
+  const attendee = await shutter.attendees.get({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(attendee); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1162,10 +1189,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 #### get URL
 
@@ -1175,8 +1202,11 @@ Example:
 
 ```js
 try {
-  const attendeeURL = await shutter.attendees.getURL({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(attendeeURL) // logs response data
+  const attendeeURL = await shutter.attendees.getURL({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(attendeeURL); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1190,10 +1220,10 @@ https://<shutter_domain>/room/<token>
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 #### create
 
@@ -1260,10 +1290,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room ID that attendee belongs to.
-attendee          | Attendee object
+| Parameter  | Description                       |
+| :--------- | :-------------------------------- |
+| roomNumber | Room ID that attendee belongs to. |
+| attendee   | Attendee object                   |
 
 #### update
 
@@ -1331,10 +1361,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room ID that attendee belongs to.
-attendee          | Attendee object
+| Parameter  | Description                       |
+| :--------- | :-------------------------------- |
+| roomNumber | Room ID that attendee belongs to. |
+| attendee   | Attendee object                   |
 
 #### delete
 
@@ -1344,8 +1374,11 @@ Example:
 
 ```js
 try {
-  const deletedAttendee = await shutter.attendees.delete({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(deletedAttendee) // logs response data
+  const deletedAttendee = await shutter.attendees.delete({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(deletedAttendee); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1380,10 +1413,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 #### mute
 
@@ -1429,11 +1462,11 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
-type              | audio or video
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
+| type       | audio or video     |
 
 #### raiseHand
 
@@ -1443,8 +1476,11 @@ Example:
 
 ```js
 try {
-  const raisedHandAttendee = await shutter.attendees.raiseHand({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(raisedHandAttendee) // logs response data
+  const raisedHandAttendee = await shutter.attendees.raiseHand({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(raisedHandAttendee); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1480,10 +1516,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 #### lowerHand
 
@@ -1493,8 +1529,11 @@ Example:
 
 ```js
 try {
-  const loweredHandAttendee = await shutter.attendees.lowerHand({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(loweredHandAttendee) // logs response data
+  const loweredHandAttendee = await shutter.attendees.lowerHand({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(loweredHandAttendee); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1530,10 +1569,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 #### grantWord
 
@@ -1543,8 +1582,11 @@ Example:
 
 ```js
 try {
-  const grantedWordAttendee = await shutter.attendees.grantWord({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(grantedWordAttendee) // logs response data
+  const grantedWordAttendee = await shutter.attendees.grantWord({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(grantedWordAttendee); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1580,10 +1622,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 #### denyWord
 
@@ -1593,8 +1635,11 @@ Example:
 
 ```js
 try {
-  const deniedWordAttendee = await shutter.attendees.denyWord({ roomNumber: '109e5704fd41a639344b9432', id: '109e5705fd41a639344b943a' });
-  console.log(deniedWordAttendee) // logs response data
+  const deniedWordAttendee = await shutter.attendees.denyWord({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+  });
+  console.log(deniedWordAttendee); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1630,10 +1675,10 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-id                | Attendee ID
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
 
 ### recordings
 
@@ -1645,8 +1690,10 @@ Example:
 
 ```js
 try {
-  const recordings = await shutter.recordings.list({ roomNumber: '109e5704fd41a639344b9432' });
-  console.log(recordings) // logs response data
+  const recordings = await shutter.recordings.list({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(recordings); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1658,17 +1705,30 @@ Promise Returns:
 [
   {
     name: '60b89e4bf36ed0194f4189ca',
-    mixed: false,
-    mixProgress: 0,
-    uploaded: false,
-    uploadProgress: 0,
-    duration: 0,
-    size: 0,
+    mixed: true,
+    mixProgress: 100,
+    uploaded: true,
+    uploadProgress: 100,
+    duration: 60,
+    size: 1000,
+	hash: '081d77de3522137b36deac2eb8479480ca4f376391865c99b73bfca5bef2c778'
+	hashType: 'SHA3-256'
     creationDate: '1622711886052',
     finishDate: null,
     posterUrl: 'https://<shutter_domain>/recordings/poster?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
     downloadUrl: 'https://<shutter_domain>/recordings/get?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>',
     streamingUrl: 'https://<shutter_domain>/recordings/streaming?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&authorization=<token>'
+	audioFile: true
+	extractedAudio: true
+	extractAudioProgress: 100
+	uploadedAudio: true
+	uploadAudioProgress: 100
+	audioDuration: 60
+	audioSize: 500
+	audioHash: '9778229a36d04eb676ad4bc6aad70d6ed8d6bbab88e9efb2aa74346509a3d77c'
+	audioHashType: 'SHA3-256'
+	downloadAudioUrl: 'https://<shutter_domain>/recordings/get?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&type=audio&authorization=<token>'
+	streamingAudioUrl: 'https://<shutter_domain>/recordings/streaming?roomNumber=109e5704fd41a639344b9432&name=60b89e4bf36ed0194f4189ca&type=audio&authorization=<token>'
   },
   ...
 ]
@@ -1676,9 +1736,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### getIframeUrl
 
@@ -1688,8 +1748,10 @@ Example:
 
 ```js
 try {
-  const recordingsIframeUrl = await shutter.recordings.getIframeUrl({ roomNumber: '109e5704fd41a639344b9432' });
-  console.log(recordingsIframeUrl) // logs response data
+  const recordingsIframeUrl = await shutter.recordings.getIframeUrl({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(recordingsIframeUrl); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1703,9 +1765,9 @@ https://<shutter_domain>/recordings/<roomNumber>/<token>
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 ### frames
 
@@ -1717,8 +1779,10 @@ Example:
 
 ```js
 try {
-  const frames = await shutter.frames.list({ roomNumber: '109e5704fd41a639344b9432' });
-  console.log(frames) // logs response data
+  const frames = await shutter.frames.list({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(frames); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1742,9 +1806,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### captureRoom
 
@@ -1754,8 +1818,10 @@ Example:
 
 ```js
 try {
-  const capturedFrames = await shutter.frames.captureRoom({ roomNumber: '109e5704fd41a639344b9432' });
-  console.log(capturedFrames) // logs response data
+  const capturedFrames = await shutter.frames.captureRoom({
+    roomNumber: "109e5704fd41a639344b9432",
+  });
+  console.log(capturedFrames); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1778,9 +1844,9 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
 
 #### captureAttendee
 
@@ -1790,8 +1856,11 @@ Example:
 
 ```js
 try {
-  const capturedFrame = await shutter.frames.captureAttendee({ roomNumber: '109e5704fd41a639344b9432', attendeeID: '6194dd427fa3293dd6a12a9e' });
-  console.log(capturedFrame) // logs response data
+  const capturedFrame = await shutter.frames.captureAttendee({
+    roomNumber: "109e5704fd41a639344b9432",
+    attendeeID: "6194dd427fa3293dd6a12a9e",
+  });
+  console.log(capturedFrame); // logs response data
 } catch (err) {
   console.log(err); // logs any error
 }
@@ -1811,8 +1880,7 @@ Promise Returns:
 
 Options:
 
-Parameter         | Description
-:---------------- | :-----------------------------------------------------------
-roomNumber        | Room number or ID.
-attendeeID        | Attendee ID.
-
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| attendeeID | Attendee ID.       |
