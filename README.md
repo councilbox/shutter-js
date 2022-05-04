@@ -81,6 +81,7 @@ The following service methods are available to instantiated clients. The example
   - [list](#list-3)
   - [getIframeUrl](#getiframeurl)
 - [frames](#frames)
+  - [get](#get-2)
   - [list](#list-4)
   - [captureRoom](#captureroom)
   - [captureAttendee](#captureattendee)
@@ -1771,6 +1772,46 @@ Options:
 
 ### frames
 
+#### get
+
+`shutter.frames.list({ roomNumber })`
+
+Example:
+
+```js
+try {
+  const frame = await shutter.frames.get({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "619b6d6cb46138160aaac1c1",
+  });
+  console.log(frames); // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+	"id": "619b6d6cb46138160aaac1c1",
+	"status": "DONE",
+	"date": "1637576044933",
+	"roomNumber": "109e5704fd41a639344b9432",
+	"attendeeID": "6194dd427fa3293dd6a12a9e",
+	"hash": "5888eb0d695eaf2452c6b7022a878d7d10acca1de00dfa7cf6c32ce348413359",
+    "hashType": "SHA3-256",
+	"url": "https://<shutter_domain>/frames/get?id=619b6d6cb46138160aaac1c1&authorization=<token>"
+}
+```
+
+Options:
+
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Frame ID.          |
+
 #### list
 
 `shutter.frames.list({ roomNumber })`
@@ -1798,6 +1839,8 @@ Promise Returns:
 		"date": "1637576044933",
 		"roomNumber": "109e5704fd41a639344b9432",
 		"attendeeID": "6194dd427fa3293dd6a12a9e",
+		"hash": "5888eb0d695eaf2452c6b7022a878d7d10acca1de00dfa7cf6c32ce348413359",
+    	"hashType": "SHA3-256",
 		"url": "https://<shutter_domain>/frames/get?id=619b6d6cb46138160aaac1c1&authorization=<token>"
   },
   ...
