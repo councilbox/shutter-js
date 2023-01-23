@@ -640,7 +640,7 @@ Options:
 
 #### update
 
-`shutter.rooms.update({ room, organizationID })`
+`shutter.rooms.update({ room })`
 
 Example:
 
@@ -648,49 +648,48 @@ Example:
 try {
   const updatedRoom = await shutter.rooms.update({
    room: {
-  roomNumber: '109e5704fd41a639344b9432',
-  type: 'MEET',
-  displayName: `Meeting test Updated`,
-  externalID: 'test_2',
-  agenda: 'Meeting agenda',
-  urlExternalLiveStreaming: '',
-  canExternalLiveStreaming: false,
-  autoExternalLiveStreaming: false,
-  externalLiveStreaming: false,
-  locked: false,
-  enabledWaitingRoom: false,
-  webhook: null,
-  data: '',
-  view: 'grid',
-  theme: 'light',
-  attendees: [
-   {
-    email: 'moderator@shutter.com',
-    role: 'MODERATOR',
-    canShareScreen: true,
-    canBroadcast: true,
-    canChat: true,
-    canMuteAudio: true,
-    canMuteVideo: true,
-    canMuteAudioAll: true,
-    canMuteVideoAll: true,
-    canShareFiles: true,
-    canSeeAttendeesList: true,
-    canRaiseHand: true,
-    broadcasting: true,
-    mutedMic: false,
-    mutedCam: false,
-    displayName: 'Moderador',
-    language: 'es'
+      roomNumber: '109e5704fd41a639344b9432',
+      type: 'MEET',
+      displayName: `Meeting test Updated`,
+      externalID: 'test_2',
+      agenda: 'Meeting agenda',
+      urlExternalLiveStreaming: '',
+      canExternalLiveStreaming: false,
+      autoExternalLiveStreaming: false,
+      externalLiveStreaming: false,
+      locked: false,
+      enabledWaitingRoom: false,
+      webhook: null,
+      data: '',
+      view: 'grid',
+      theme: 'light',
+      attendees: [
+       {
+        email: 'moderator@shutter.com',
+        role: 'MODERATOR',
+        canShareScreen: true,
+        canBroadcast: true,
+        canChat: true,
+        canMuteAudio: true,
+        canMuteVideo: true,
+        canMuteAudioAll: true,
+        canMuteVideoAll: true,
+        canShareFiles: true,
+        canSeeAttendeesList: true,
+        canRaiseHand: true,
+        broadcasting: true,
+        mutedMic: false,
+        mutedCam: false,
+        displayName: 'Moderador',
+        language: 'es'
+       }
+      ],
+      password: 'abc12345',
+      canRecord: false,
+      autoRecord: false,
+      security: 'PRIVATE',
+      state: 'DRAFT'
    }
-  ],
-  password: 'abc12345',
-  canRecord: false,
-  autoRecord: false,
-  security: 'PRIVATE',
-  state: 'DRAFT'
-   },
-   organizationID: "109e5700fd41a639344b942c"
   console.log(updatedRoom) // logs response data
 } catch (err) {
   console.log(err); // logs any error
@@ -750,7 +749,6 @@ Options:
 | Parameter      | Description                           |
 | :------------- | :------------------------------------ |
 | room           | Room object                           |
-| organizationID | Organization ID that room belongs to. |
 
 #### delete
 
