@@ -1,0 +1,62 @@
+[
+    {
+        "scope": "http://example.test:80",
+        "method": "POST",
+        "path": "/graphql",
+        "body": {
+            "query": "\n\tmutation stopSoupRecording($roomNumber: String!) {\n\t\tstopSoupRecording(roomNumber: $roomNumber) {\n\t\t\trecording\n\t\t}\n\t}\n",
+            "variables": {},
+            "operationName": "stopSoupRecording"
+        },
+        "status": 400,
+        "response": {
+            "errors": [
+                {
+                    "message": "Variable \"$roomNumber\" of required type \"String!\" was not provided.",
+                    "code": "INTERNAL_SERVER_ERROR",
+                    "locations": [
+                        {
+                            "line": 2,
+                            "column": 25
+                        }
+                    ]
+                }
+            ]
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx/1.18.0 (Ubuntu)",
+            "Date",
+            "Sat, 26 Jun 2021 09:57:45 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "167",
+            "Connection",
+            "close",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "ETag",
+            "W/\"a7-3pNh0G8ajaHJw9xBDk0nGZl631g\""
+        ],
+        "responseIsBinary": false
+    }
+]

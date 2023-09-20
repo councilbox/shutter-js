@@ -335,6 +335,45 @@ describe('stopRecording', () => {
 	});
 });
 
+describe('stopSoupRecording', () => {
+	test('no arguments', () => {
+		const promise = back('rooms/stopSoupRecording.json').then(({ nockDone }) => rooms.stopSoupRecording().finally(nockDone));
+
+		return expect(promise).rejects.toMatchInlineSnapshot(
+			"[TypeError: Cannot destructure property 'roomNumber' of '_ref8' as it is undefined.]"
+		);
+	});
+
+	test('no roomNumber', () => {
+		const promise = back('rooms/stopSoupRecording_no_roomNumber.json').then(
+			({ nockDone }) => rooms.stopSoupRecording({}).finally(nockDone)
+		);
+
+		return expect(promise).rejects.toMatchInlineSnapshot(`
+              Array [
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 25,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$roomNumber\\" of required type \\"String!\\" was not provided.",
+                },
+              ]
+            `);
+	});
+
+	test.skip('roomNumber', () => {
+		const promise = back('rooms/stopSoupRecording_roomNumber.json').then(
+			({ nockDone }) => rooms.stopSoupRecording({}).finally(nockDone)
+		);
+
+		return expect(promise).resolves.toMatchInlineSnapshot();
+	});
+});
+
 describe('startMassiveStreaming', () => {
 	test('no arguments', () => {
 		const promise = back('rooms/startMassiveStreaming.json').then(({ nockDone }) => rooms.startMassiveStreaming().finally(nockDone));
