@@ -77,6 +77,8 @@ The following service methods are available to instantiated clients. The example
   - [lowerHand](#lowerhand)
   - [grantWord](#grantword)
   - [denyWord](#denyword)
+  - [startTrack](#startTrack)
+  - [stopTrack](#stopTrack)
 - [recordings](#recordings)
   - [list](#list-3)
   - [getIframeUrl](#getiframeurl)
@@ -1774,6 +1776,86 @@ Options:
 | :--------- | :----------------- |
 | roomNumber | Room number or ID. |
 | id         | Attendee ID        |
+
+#### startTrack
+
+`shutter.attendees.startTrack({ roomNumber, id })`
+
+Example:
+
+```js
+try {
+  const startTrackAttendee = await shutter.attendees.startTrack({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+    type: "video",
+  });
+  console.log(startTrackAttendee); // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+  id: '109e5705fd41a639344b943a',
+  externalID: null,
+  role: 'SPEAKER',
+  broadcasting: false,
+  mutedMic: false,
+  mutedCam: false,
+}
+```
+
+Options:
+
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
+| type       | video or audio     |
+
+#### stopTrack
+
+`shutter.attendees.stopTrack({ roomNumber, id })`
+
+Example:
+
+```js
+try {
+  const stopTrackAttendee = await shutter.attendees.stopTrack({
+    roomNumber: "109e5704fd41a639344b9432",
+    id: "109e5705fd41a639344b943a",
+    type: "video",
+  });
+  console.log(stopTrackAttendee); // logs response data
+} catch (err) {
+  console.log(err); // logs any error
+}
+```
+
+Promise Returns:
+
+```js
+{
+  id: '109e5705fd41a639344b943a',
+  externalID: null,
+  role: 'SPEAKER',
+  broadcasting: false,
+  mutedMic: false,
+  mutedCam: false,
+}
+```
+
+Options:
+
+| Parameter  | Description        |
+| :--------- | :----------------- |
+| roomNumber | Room number or ID. |
+| id         | Attendee ID        |
+| type       | video or audio     |
 
 ### recordings
 
