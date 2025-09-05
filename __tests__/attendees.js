@@ -484,3 +484,121 @@ describe('denyWord', () => {
 		return expect(promise).resolves.toMatchInlineSnapshot();
 	});
 });
+
+describe('stopTrack', () => {
+	test('no arguments', () => {
+		const promise = back('attendees/stopTrack.json').then(({ nockDone }) => attendees.stopTrack().finally(nockDone));
+
+		return expect(promise).rejects.toMatchInlineSnapshot(
+			"[TypeError: Cannot destructure property 'roomNumber' of '_ref10' as it is undefined.]"
+		);
+	});
+
+	test('no roomNumber', () => {
+		const promise = back('attendees/stopTrack_no_roomNumber.json').then(
+			({ nockDone }) => attendees.stopTrack({}).finally(nockDone)
+		);
+
+		return expect(promise).rejects.toMatchInlineSnapshot(`
+              Array [
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 20,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$roomNumber\\" of required type \\"String!\\" was not provided.",
+                },
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 42,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$attendeeID\\" of required type \\"String!\\" was not provided.",
+                },
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 42,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$type\\" of required type \\"String!\\" was not provided.",
+                },
+              ]
+            `);
+	});
+
+	test.skip('roomNumber', () => {
+		const promise = back('attendees/stopTrack_roomNumber.json').then(
+			({ nockDone }) => attendees.stopTrack({}).finally(nockDone)
+		);
+
+		return expect(promise).resolves.toMatchInlineSnapshot();
+	});
+});
+
+describe('startTrack', () => {
+	test('no arguments', () => {
+		const promise = back('attendees/startTrack.json').then(({ nockDone }) => attendees.startTrack().finally(nockDone));
+
+		return expect(promise).rejects.toMatchInlineSnapshot(
+			"[TypeError: Cannot destructure property 'roomNumber' of '_ref10' as it is undefined.]"
+		);
+	});
+
+	test('no roomNumber', () => {
+		const promise = back('attendees/startTrack_no_roomNumber.json').then(
+			({ nockDone }) => attendees.startTrack({}).finally(nockDone)
+		);
+
+		return expect(promise).rejects.toMatchInlineSnapshot(`
+              Array [
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 20,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$roomNumber\\" of required type \\"String!\\" was not provided.",
+                },
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 42,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$attendeeID\\" of required type \\"String!\\" was not provided.",
+                },
+                Object {
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "locations": Array [
+                    Object {
+                      "column": 42,
+                      "line": 2,
+                    },
+                  ],
+                  "message": "Variable \\"$type\\" of required type \\"String!\\" was not provided.",
+                },
+              ]
+            `);
+	});
+
+	test.skip('roomNumber', () => {
+		const promise = back('attendees/startTrack_roomNumber.json').then(
+			({ nockDone }) => attendees.startTrack({}).finally(nockDone)
+		);
+
+		return expect(promise).resolves.toMatchInlineSnapshot();
+	});
+});
